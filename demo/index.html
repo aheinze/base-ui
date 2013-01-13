@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base UI</title>
+    <link rel="stylesheet" href="../dist/base-ui.min.css">
+    <link rel="stylesheet" href="demo.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../dist/base-ui.min.js"></script>
+</head>
+<body>
+    <ul class="mobile-top-menu" data-baseui="mobilemenu" style="display: block;">
+        <li class="seperator">
+            <strong><span class="icon-list"></span> Base UI</strong>
+            <ul>
+                <li><a href="">Test</a></li>
+                <li><a href="">Test</a></li>
+                <li><a href="">Test</a></li>
+                <li><a href="">Test</a></li>
+                <li><a href="">Test</a></li>
+            </ul>
+        </li>
+        <li class="right"><a href="https://github.com/aheinze/base-ui"><span class="icon-github-sign"></span></a></li>
+    </ul>
+    <div class="wrap">
+        
+        <h1>Base UI</h1>
+
+
+        <h2>Layout</h2>
+
+
+        <h3>Button</h3>
+        <p>
+            <button class="button">Button</button> 
+            <button class="button red">Red</button>
+            <button class="button green">Green</button> 
+            <button class="button orange">Orange</button> 
+        </p>
+
+        <h3>Group of Buttons</h3>
+        <p>
+            <div class="button-group">
+                <button class="button">Button A</button>
+                <button class="button">Button B</button>
+                <button class="button">Button C</button>
+            </div>
+        </p>
+
+        <h3>Grid</h3>
+        <div class="demo row">
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+            <div class="one column">c-1</div>
+        </div>
+        <div class="demo row">
+            <div class="two columns">c-2</div>
+            <div class="two columns">c-2</div>
+            <div class="two columns">c-2</div>
+            <div class="two columns">c-2</div>
+            <div class="two columns">c-2</div>
+            <div class="two columns">c-2</div>
+        </div>
+        <div class="demo row">
+            <div class="three columns">c-3</div>
+            <div class="three columns">c-3</div>
+            <div class="three columns">c-3</div>
+            <div class="three columns">c-3</div>
+        </div>
+        <div class="demo row">
+            <div class="four columns">c-4</div>
+            <div class="four columns">c-4</div>
+            <div class="four columns">c-4</div>
+        </div>
+        <div class="demo row">
+            <div class="five columns">c-5</div>
+            <div class="five columns">c-5</div>
+            <div class="two columns">c-2</div>
+        </div> 
+        <div class="demo row">
+            <div class="six columns">c-6</div>
+            <div class="six columns">c-6</div>
+        </div>
+
+        <h2>Components</h2>
+
+        <button class="button" onclick="$.baseui.modal('Hello World!')">Open Modal</button> 
+        <button class="button" onclick="$.baseui.topbox.alert('Hello World!')">Open Topbox</button> 
+    </div>
+</body>
+</html>

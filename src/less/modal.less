@@ -1,0 +1,47 @@
+.modal-win{
+	position: absolute;
+	visibility: hidden;
+	top: -1000px;
+	left: -1000px;
+	min-width: 400px;
+	background: #fff;
+	padding: 20px 20px 20px 20px;
+	border-radius: 4px;
+	border: 1px #f7f7f7;
+	box-shadow: 0px 0px 10px #333;
+	z-index: 8100;
+}
+
+.modal-overlay{
+	z-index: 8000;
+	background: #222;
+}
+
+.modal-win > div.modal-close {
+	position: absolute;
+	background: #000;
+	text-align: center;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	right: -25px;
+	top: 8px;
+	line-height: 1;
+	border-radius: 50%;
+}
+
+.modal-win > div.modal-close:hover {
+	background: #000;
+}
+
+.modal-win > div.modal-close:after {
+
+	position: absolute;
+	content: "×";
+	color: #fff;
+	font-size: 14px;
+	line-height: 1;
+	left: 6px;
+	top: 2px;
+}

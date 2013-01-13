@@ -1,0 +1,12 @@
+
+h3 { color: #999; }
+
+.demo.row {
+    margin-bottom: 5px;
+}
+
+.demo.row .columns, .demo.row .column {
+    background: #f7f7f7;
+    border-right: 1px #fff solid;
+    text-align: center;
+}

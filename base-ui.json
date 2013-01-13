@@ -1,0 +1,26 @@
+{
+  "name": "base-ui",
+  "title": "Base UI",
+  "description": "...",
+  "version": "1.0.0",
+  "homepage": "https://github.com/aheinze/base-ui",
+  "author": {
+    "name": "Artur",
+    "email": "artur@agentejo.com",
+    "url": "http://agentejo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aheinze/base-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aheinze/base-ui/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/aheinze/base-ui/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": []
+}

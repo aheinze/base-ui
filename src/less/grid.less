@@ -1,0 +1,178 @@
+
+.wrap {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.row { 
+
+    max-width: 100%; 
+    margin: 0 auto;
+
+    .row { 
+        width: auto; 
+        max-width: none; 
+        min-width: 0; 
+        margin: 0 -15px;
+
+        &.collapse {
+            margin: 0; 
+        }
+    }
+
+    &.collapse {
+        
+        .columns, .column {
+            padding: 0;
+        }
+   }
+
+   .column, .columns {
+
+        float: left; 
+        min-height: 1px; 
+        padding: 0 15px; 
+        position: relative;
+
+        &.centered { 
+            float: none; 
+            margin: 0 auto; 
+        }
+    }
+}
+
+
+.one, .row .one       { width: 8.33333%; }
+.two, .row .two       { width: 16.66667%; }
+.three, .row .three   { width: 25%; }
+.four, .row .four     { width: 33.33333%; }
+.five, .row .five     { width: 41.66667%; }
+.six, .row .six       { width: 50%; }
+.seven, .row .seven   { width: 58.33333%; }
+.eight, .row .eight   { width: 66.66667%; }
+.nine, .row .nine     { width: 75%; }
+.ten, .row .ten       { width: 83.33333%; }
+.eleven, .row .eleven { width: 91.66667%; }
+.twelve, .row .twelve { width: 100%; }
+
+.row .offset-by-one   { margin-left: 8.33333%; }
+.row .offset-by-two   { margin-left: 16.66667%; }
+.row .offset-by-three { margin-left: 25%; }
+.row .offset-by-four  { margin-left: 33.33333%; }
+.row .offset-by-five  { margin-left: 41.66667%; }
+.row .offset-by-six   { margin-left: 50%; }
+.row .offset-by-seven { margin-left: 58.33333%; }
+.row .offset-by-eight { margin-left: 66.66667%; }
+.row .offset-by-nine  { margin-left: 75%; }
+.row .offset-by-ten   { margin-left: 83.33333%; }
+
+.push-two   { left: 16.66667%; }
+.pull-two   { right: 16.66667%; }
+.push-three { left: 25%; }
+.pull-three { right: 25%; }
+.push-four  { left: 33.33333%; }
+.pull-four  { right: 33.33333%; }
+.push-five  { left: 41.66667%; }
+.pull-five  { right: 41.66667%; }
+.push-six   { left: 50%; }
+.pull-six   { right: 50%; }
+.push-seven { left: 58.33333%; }
+.pull-seven { right: 58.33333%; }
+.push-eight { left: 66.66667%; }
+.pull-eight { right: 66.66667%; }
+.push-nine  { left: 75%; }
+.pull-nine  { right: 75%; }
+.push-ten   { left: 83.33333%; }
+.pull-ten   { right: 83.33333%; }
+
+
+.wrap, .row {
+    .clearfix();
+}
+
+.row { *zoom: 1; }
+.row:before, .row:after { content: " "; display: table; }
+.row:after { clear: both; }
+
+/* Block Grids ---------------------- */
+/* These are 2-up, 3-up, 4-up and 5-up ULs, suited
+for repeating blocks of content. Add 'mobile' to
+them to switch them just like the layout grid
+(one item per line) on phones
+
+For IE7/8 compatibility block-grid items need to be
+the same height. You can optionally uncomment the
+lines below to support arbitrary height, but know
+that IE7/8 do not support :nth-child.
+-------------------------------------------------- */
+
+
+ul.block-grid { 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+
+    > li { display: block; height: auto;float: left; margin: 0px; padding: 0px; }
+
+    &.one-column {
+        > li { width: 100%; }
+    }
+
+    &.two-columns {
+        > li { width: 50%; }
+        > li:nth-child(2n+1) { clear: both; }
+    }
+
+    &.three-columns {
+        > li { width: 33.33%; }
+        > li:nth-child(3n+1) { clear: both; }
+    }
+
+    &.four-columns {
+        > li { width: 25%; }
+        > li:nth-child(4n+1) { clear: both; }
+    }
+
+    &.five-columns {
+        > li { width: 20%; }
+        > li:nth-child(5n+1) { clear: both; }
+    }
+
+    &.six-columns {
+        > li { width: 16.66%; }
+        > li:nth-child(6n+1) { clear: both; }
+    }
+
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 400px) {
+    
+    .row {
+        margin: 0;
+        width: auto;
+    }
+    .row > .column, .row > .columns {
+        display: block;
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+
+    .block-grid > li {
+        display: block;
+        float: none;
+        width: 100% !important;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+    .wrap {padding: 0px 10px;}
+}
