@@ -1,13 +1,5 @@
-/**
- *  Bower component definition for quickly Base UI installation
- *
- *  Installation with bower:
- *  
- *     bower install base-ui
- *      
- */
 {
     "name": "base-ui",
     "version": "1.0.0",
-    "main": ["dist/base-ui.min.js","dist/base-ui.min.css","fonts/fontawesome-webfont.eot", "fonts/fontawesome-webfont.ttf", "fonts/fontawesome-webfont.woff"]
+    "main": ["dist/base-ui.min.js", "dist/base-ui.min.css", "fonts/fontawesome-webfont.eot", "fonts/fontawesome-webfont.ttf", "fonts/fontawesome-webfont.woff"]
 }
