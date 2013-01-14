@@ -13,7 +13,6 @@
                 fn      = data.split(" ")[0],
                 options = UI.util.options(data);
 
-
             element.dataui(fn, options);
         });
 
@@ -64,7 +63,13 @@
         UI.bydata(doc);
 
         var target   = doc.body,
-            MO       = win.MutationObserver || win.WebKitMutationObserver || function(callback) { this.observe = function(target, config){}; },
+            MO       = win.MutationObserver || win.WebKitMutationObserver || function(callback) { 
+                        this.observe = function(target, config){
+                            setTimeout(function(){ 
+                                UI.bydata(doc); 
+                            }, 1000);
+                        };
+            },
             observer = new MO(function(mutations) {
                 mutations.forEach(function(mutation) {
                     if (mutation.addedNodes.length) {

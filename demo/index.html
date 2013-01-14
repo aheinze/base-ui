@@ -9,7 +9,7 @@
     <script src="../dist/base-ui.min.js"></script>
 </head>
 <body>
-    <ul class="mobile-top-menu" data-baseui="mobilemenu" style="display: block;">
+    <ul class="mobile-top-menu" data-baseui="mobilemenu">
         <li class="seperator">
             <strong><span class="icon-list"></span> Base UI</strong>
             <ul>
@@ -93,8 +93,12 @@
 
         <h2>Components</h2>
 
-        <button class="button" onclick="$.baseui.modal('Hello World!')">Open Modal</button> 
-        <button class="button" onclick="$.baseui.topbox.alert('Hello World!')">Open Topbox</button> 
+        <h3>Dialogs</h3>
+
+        <p>
+            <button class="button" onclick="$.baseui.modal('Hello World!')">Open Modal</button> 
+            <button class="button" onclick="$.baseui.topbox.alert('Hello World!')">Open Topbox</button>
+        </p>
     </div>
 </body>
 </html>
