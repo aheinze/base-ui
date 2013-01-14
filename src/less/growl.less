@@ -1,0 +1,48 @@
+#growlcontainer{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+  font-size: 12px;
+  width: 300px;
+}
+
+.growlstatus{
+  position: relative;
+  background: #000; /*fallback for ie*/
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px #000 solid;
+  border: 3px rgba(0, 0, 0, 0.8) solid;
+  padding: 15px;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1;
+  
+  border-radius:6px;
+}
+
+.growlstatus .growltitle{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.growlstatus-close{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+  background: transparent url(@imgCloseButton) 0 0 no-repeat;
+}
+
+.growlstatus:hover{
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px #fff solid;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+.growlstatus:hover .growlstatus-close{
+  display: block;
+}
