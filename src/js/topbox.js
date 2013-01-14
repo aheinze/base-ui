@@ -1,5 +1,6 @@
 (function($, UI){
 
+
     var $this = null;
     
     UI.topbox = $this = {
@@ -352,4 +353,4 @@
 			});
         });
     };
-})(jQuery, jQuery.baseui || {});
+})(jQuery, jQuery.baseui);

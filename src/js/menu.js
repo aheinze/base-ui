@@ -1,4 +1,5 @@
 (function($, UI){
+    
 
     function MobileMenu(element, options){
 
@@ -19,4 +20,4 @@
 
     UI.fn.mobilemenu = MobileMenu;
 
-})(jQuery, jQuery.baseui || {});
+})(jQuery, jQuery.baseui);

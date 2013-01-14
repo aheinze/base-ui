@@ -4,15 +4,15 @@
   font-family: inherit;
   padding: 10px 10px;
   border-style: none;
-  border-radius: 3px;
+  border-radius: 2px;
   text-decoration: none;
-  color: #fff;
+  color: #333;
   line-height: 1;
-  background-color: #49AFCD;
+  background-color: #f5f5f5;
+  border: 1px solid #bbbbbb;
   .gradiantFromTop(transparent, rgba(0,0,0,0.2));
 
-  /* text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25); */
-    color: #fff;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 
   .aside {
     display: inline-block;
@@ -22,7 +22,6 @@
   }
 
   &.active, &:hover {
-    color: #fff;
     .gradiantFromTop(rgba(0,0,0,0.2), transparent);
   }
 
@@ -32,12 +31,27 @@
 
   &.green {
     background-color: #41c121;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-color: green;
+    color: #fff;
   }
   &.red {
     background-color: red;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-color: red;
+    color: #fff;
   }
   &.orange {
     background-color: orange;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-color: orange;
+    color: #fff;
+  }
+  &.dark {
+    background-color: #666;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-color: #666;
+    color: #fff;
   }
 }
 
@@ -50,6 +64,10 @@
   .button {
     border-radius: 0;
     float:left;
+
+    &:not(:last-child){
+      border-right: none;
+    }
   }
   .button:first-child {
     border-radius: 3px 0px 0px 3px;

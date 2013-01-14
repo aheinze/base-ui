@@ -1,7 +1,7 @@
 (function($, UI){
 	
 
-	var tpl = '<div class="modal-win animated bounceInDown"><div></div><div class="modal-close"></div></div>',
+	var tpl = '<div class="modal-win animated"><div></div><div class="modal-close"></div></div>',
 		current = false,
 		overlay = false,
 		persist = false,
@@ -15,6 +15,7 @@
                 'closeOnEsc': true,
                 'height'    : 'auto',
                 'width'     : 'auto',
+                'effect'    : false,
 
                 //events
                 'beforeShow'  : function(){},
@@ -26,7 +27,7 @@
             UI.modal.close();
         }
 
-        current = $(tpl);
+        current = $(tpl).addClass(o.effect);
 
         var container = current.children().eq(0);
 
@@ -114,4 +115,4 @@
         UI.modal.fit();
     });
 
-})(jQuery, jQuery.baseui || {});
+})(jQuery, jQuery.baseui);

@@ -1,5 +1,6 @@
 (function($, UI){
 
+
     function Button(element, options){
 
         var $this = this;
@@ -87,4 +88,4 @@
     UI.fn.button     = Button;
     UI.fn.radiogroup = ButtonRadioGroup;
 
-})(jQuery, jQuery.baseui || {});
+})(jQuery, jQuery.baseui);
