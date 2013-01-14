@@ -1,4 +1,4 @@
-/*global module:false*/
+
 module.exports = function(grunt) {
 
   var exec = require('child_process').exec,
@@ -24,7 +24,10 @@ module.exports = function(grunt) {
             'src/js/base.js',
             'src/js/menu.js',
             'src/js/modal.js',
-            'src/js/topbox.js'
+            'src/js/topbox.js',
+            'src/js/button.js',
+            'src/js/dropdown.js',
+            'src/js/growl.js'
           ].join(" "))+' -o dist/base-ui.min.js'
         ],
         infos: [

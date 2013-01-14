@@ -9,11 +9,8 @@
   color: #fff;
   line-height: 1;
   background-color: #49AFCD;
-  background-image: -webkit-linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
-  background-image: -moz-linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
-  background-image: -ms-linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
-  background-image: -o-linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
-  background-image: linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
+  .gradiantFromTop(transparent, rgba(0,0,0,0.2));
+
   /* text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25); */
     color: #fff;
 
@@ -24,14 +21,14 @@
     border-left: 1px #fff dotted;
   }
 
-  &:hover {
+  &.active, &:hover {
     color: #fff;
-    background-image: -webkit-linear-gradient(90deg, transparent, rgba(0,0,0,0.2));
-    background-image: -moz-linear-gradient(90deg, transparent, rgba(0,0,0,0.2));
-    background-image: -ms-linear-gradient(90deg, transparent, rgba(0,0,0,0.2));
-    background-image: -o-linear-gradient(90deg, transparent, rgba(0,0,0,0.2));
-    background-image: linear-gradient(90deg, transparent, rgba(0,0,0,0.2));
+    .gradiantFromTop(rgba(0,0,0,0.2), transparent);
   }
+
+  &.active, &:active {
+    box-shadow: inset 0px 0px 15px rgba(0,0,0,0.3);
+  } 
 
   &.green {
     background-color: #41c121;
@@ -48,7 +45,7 @@
   
   display: inline-block;
 
-  .clearfix();
+  .hasclearfix();
 
   .button {
     border-radius: 0;

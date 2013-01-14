@@ -4,12 +4,30 @@
 
 @mainBackground :             #fff;
 @mainFontFamily :             "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-@mainFontSize :               14px;
+@mainFontSize:                14px;
 @mainFontLineHeight :         24px;
 @mainFontWeight :             normal;
+@mainBorderRadius:            3px;
+@mainTextColor:               #000;
 
 @mainLinkColor:               #2ba6cb;
-@mainLinkHoverColor:          #2795B6;
+@mainLinkHoverColor:          #2795b6;
+
+@mainHeaderColor:             #000;
+@mainHeaderFontFamily:        @mainFontFamily;
+@mainHeaderFontWeight:        bold;
+
+@colorSoft:                   #ccc;
+
+@colorGrayDark:               #444;
+@colorDisabled:               @colorGrayDark;
+@colorDisabledBackground:     @colorSoft;
+
+@inputBorderRadius:           3px;
+@inputBorderColor:            #ccc;
+@inputBackgroundColor:        #fff;
+
+
 
 /*
     @MIXINS
@@ -33,7 +51,7 @@
 }
 
 /* Nicolas Gallagher's micro clearfix */
-.clearfix() {
+.hasclearfix() {
     *zoom:1;
     &:before, &:after {
         content:"";
@@ -45,4 +63,18 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.gradiantFromTop(@start, @end) {
+  background-image: -moz-linear-gradient(top, @start, @end);
+  background-image: -webkit-linear-gradient(top, @start, @end);
+  background-image: -o-linear-gradient(top, @start, @end);
+  background-image: linear-gradient(to bottom, @start, @end);
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
 }

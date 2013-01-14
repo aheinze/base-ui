@@ -1,0 +1,137 @@
+a, a:visited {
+    color: @mainLinkColor;
+    text-decoration: none;
+    line-height: inherit;
+}
+
+a:hover {
+	color: @mainLinkHoverColor;
+}
+
+small   { font-size: 85%; }
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+p { margin: 0 0 @mainFontLineHeight / 2; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: (@mainFontLineHeight / 2) 0;
+  font-family: @mainHeaderFontFamily;
+  font-weight: @mainHeaderFontWeight;
+  line-height: @mainFontLineHeight;
+  color: @mainHeaderColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  
+  small, span {
+    font-weight: normal;
+    line-height: 1;
+    color: @colorSoft;
+  }
+}
+
+h1,
+h2,
+h3 { line-height: @mainFontLineHeight * 2; }
+
+h1 { font-size: @mainFontSize * 2.25; } // ~38px
+h2 { font-size: @mainFontSize * 1.75; } // ~32px
+h3 { font-size: @mainFontSize * 1.25; } // ~24px
+h4 { font-size: @mainFontSize * 1.0; } // ~18px
+h5 { font-size: @mainFontSize * 0.85}
+h6 { font-size: @mainFontSize * 0.65; } // ~12px
+
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 @mainFontLineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: @mainFontLineHeight;
+}
+
+// Remove default list styles
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Single-line list items
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+  & > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Inline and block code styles
+code, pre {
+  padding: 0 3px 2px;
+  font-family: monospace;
+  font-size: @mainFontSize - 2;
+  color: @colorGrayDark;
+  border-radius: 3px;
+}
+
+// Inline code
+code {
+  padding: 2px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  white-space: nowrap;
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: (@mainFontLineHeight - 1) / 2;
+  margin: 0 0 @mainFontLineHeight / 2;
+  font-size: @mainFontSize - 1; // 14px to 13px
+  line-height: @mainFontLineHeight;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc; // fallback for IE7-8
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: @mainBorderRadius;
+
+  // Make prettyprint styles more spaced out for readability
+  &.prettyprint {
+    margin-bottom: @mainFontLineHeight;
+  }
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    color: inherit;
+    white-space: pre;
+    white-space: pre-wrap;
+    background: transparent;
+    border: 0;
+  }
+
+  &.code {
+  	background: #222;
+  	color: #fff;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: 300px;
+  overflow-y: scroll;
+}

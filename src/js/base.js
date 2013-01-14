@@ -10,7 +10,7 @@
         $(context || doc).find("[data-baseui]").each(function(){
             var element = $(this), 
                 data    = element.attr("data-baseui"),
-                fn      = data.split(" ")[0],
+                fn      = $.trim(data.split(">")[0]),
                 options = UI.util.options(data);
 
             element.dataui(fn, options);
@@ -20,12 +20,14 @@
 
     UI.util.options = function(string) {
 
-        var start = string.indexOf("{"), options = {};
+        var start = string.indexOf(">"), options = {};
 
         if (start != -1) {
             try {
-                options = (new Function("", "var json = " + string.substr(start) + "; return JSON.parse(JSON.stringify(json));"))();
-            } catch(e) {}
+                options = (new Function("", "var json = {" + string.substr(start+1) + "}; return JSON.parse(JSON.stringify(json));"))();
+            } catch(e) {
+                $.error(e.message);
+            }
         }
 
         return options;
