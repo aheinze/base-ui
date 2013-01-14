@@ -1,7 +1,7 @@
 (function($, UI){
 	
 
-	var tpl = '<div class="modal-win animated fadeInDown"><div></div><div class="modal-close"></div></div>',
+	var tpl = '<div class="modal-win animated bounceInDown"><div></div><div class="modal-close"></div></div>',
 		current = false,
 		overlay = false,
 		persist = false,
