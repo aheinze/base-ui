@@ -36,7 +36,7 @@
             this.options = $.extend({}, this.defaults, options);
 			
             var tplDlg = '<div class="topbox-window '+$this.options.theme+'">';
-                tplDlg+=  '<div class="topbox-closebutton"></div>';
+                tplDlg+=  '<div class="topbox-close"></div>';
                 tplDlg+=  '<div class="topbox-title" style="display:none;"></div>';
                 tplDlg+=  '<div class="topbox-content"><div class="topbox-innercontent"></div></div>';
                 tplDlg+=  '<div class="topbox-buttonsbar"><div class="topbox-buttons"></div></div>';
@@ -45,9 +45,9 @@
             this.box = $(tplDlg);
 
             if(!this.options.closeBtn) {
-                this.box.find(".topbox-closebutton").hide();
+                this.box.find(".topbox-close").hide();
             } else {
-                this.box.find(".topbox-closebutton").bind("click",function(){
+                this.box.find(".topbox-close").bind("click",function(){
                     $this.close();
                 });   
             }

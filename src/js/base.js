@@ -1,25 +1,60 @@
 (function($, win, doc){
 
-
     $.baseui = UI = {
         util: {},
+        supports: {},
         fn: {}
     };
 
-    UI.bydata = function(context) {
+    // supports
+    //---------------------------------------------------------
+    UI.supports.transition = (function() {
 
-        $(context || doc).find("[data-baseui]").each(function(){
+        var transitionEnd = (function() {
+
+            var element = doc.body || doc.documentElement,
+                transEndEventNames = {
+                    'WebkitTransition' : 'webkitTransitionEnd',
+                    'MozTransition' : 'transitionend',
+                    'OTransition' : 'oTransitionEnd otransitionend',
+                    'transition' : 'transitionend'
+                }, 
+                transition = false;
+
+            for (var name in transEndEventNames){
+                if (element.style[name] !== undefined) {
+                    transition = transEndEventNames[name];
+                }
+            }
+
+            return transition;
+        })();
+
+        return transitionEnd && { end: transitionEnd };
+    })();
+
+    UI.supports.mutationObserver = (function() {
+        return true && win.MutationObserver || win.WebKitMutationObserver;
+    })();
+
+    // util
+    //---------------------------------------------------------
+    UI.util.initByDataAttr = function(context) {
+
+        $(context || doc).find("[data-baseui]:not([data-baseui-skip])").each(function(){
+            
             var element = $(this), 
                 data    = element.attr("data-baseui"),
                 fn      = $.trim(data.split(">")[0]),
-                options = UI.util.options(data);
+                options = UI.util.parseOptions(data);
 
-            element.dataui(fn, options);
-        });
+            element.baseui(fn, options);
+
+        }).attr("data-baseui-skip", "true");
 
     };
 
-    UI.util.options = function(string) {
+    UI.util.parseOptions = function(string) {
 
         var start = string.indexOf(">"), options = {};
 
@@ -34,8 +69,9 @@
         return options;
     };
 
-
-    $.fn.dataui = function (fn, options) {
+    // misc
+    //---------------------------------------------------------
+    $.fn.baseui = function (fn, options) {
 
         if (!UI.fn[fn]) {
             $.error("Base UI component [" + fn + "] does not exist.");
@@ -63,20 +99,20 @@
     // auto data ui on dom manipulation
     $(function(){
         
-        UI.bydata(doc);
+        UI.util.initByDataAttr(doc);
 
         var target   = doc.body,
-            MO       = win.MutationObserver || win.WebKitMutationObserver || function(callback) { 
+            MO       = UI.supports.mutationObserver || function(callback) { 
                         this.observe = function(target, config){
                             setTimeout(function(){ 
-                                UI.bydata(doc); 
+                                UI.util.initByDataAttr(doc); 
                             }, 1000);
                         };
             },
             observer = new MO(function(mutations) {
                 mutations.forEach(function(mutation) {
                     if (mutation.addedNodes.length) {
-                        UI.bydata(doc);
+                        UI.util.initByDataAttr(doc);
                     }
                 });
             });
