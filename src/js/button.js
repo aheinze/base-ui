@@ -19,6 +19,7 @@
         this.element.on("click", function(e){
             e.preventDefault();
             $this.toggle();
+            $(his).blur();
         });
     }
     
@@ -68,7 +69,7 @@
         this.element = $element.on("click", ".button", function(e) {
             e.preventDefault();
             $element.find(".button").not(this).removeClass("active");
-            $element.trigger("change", [$(this).addClass("active")]);
+            $element.trigger("change", [$(this).addClass("active").blur()]);
 
             $this.hidden.val($(this).data("value"));
         });

@@ -1,6 +1,7 @@
 
 module.exports = function(grunt) {
 
+
   var exec = require('child_process').exec,
     util = require('util'),
     sys  = require('sys'),
@@ -19,21 +20,26 @@ module.exports = function(grunt) {
     shell: {
       build: {
         commands: [
+          'lessc src/less/_all.less > dist/base-ui.css',
           'lessc src/less/_all.less > dist/base-ui.min.css -x',
-          'uglifyjs '+([
-            'src/js/base.js',
-            'src/js/menu.js',
-            'src/js/modal.js',
-            'src/js/topbox.js',
-            'src/js/button.js',
-            'src/js/dropdown.js',
-            'src/js/growl.js'
-          ].join(" "))+' -o dist/base-ui.min.js'
+          function(){ 
+
+            var jsfiles = [],
+                content = [];
+
+            fs.readdirSync(__dirname+'/src/js').forEach(function(file){
+              if(file.substr(-3)==".js") {
+                jsfiles.push('src/js/'+file);
+                content.push(grunt.file.read('src/js/'+file));
+              }
+            });
+
+            grunt.file.write("dist/base-ui.js", content.join('\n'));
+
+            return 'uglifyjs '+jsfiles.join(" ")+' -o dist/base-ui.min.js';
+          }
         ],
-        infos: [
-          "Compiling less files.",
-          "Compiling js files."
-        ],
+        infos: [],
         options: {
           "cwd": __dirname
         },
@@ -111,11 +117,13 @@ module.exports = function(grunt) {
       
       // grunt.log.writeln("exec: "+cmd);
 
-      exec(cmd, options, function(error, stdout, stderr) { 
+      var toexec = (typeof(cmd)=="function" ? cmd():cmd);
+
+      exec(toexec, options, function(error, stdout, stderr) { 
         
         executed++;
 
-        var msg = infos[index] ? infos[index] : cmd.split(" ")[0]+" ...";
+        var msg = infos[index] ? infos[index] : toexec.split(" ")[0]+" ...";
 
         grunt.log[error ? "error":"ok"](msg + (error ? "Reason: " + error.message : ""));
 

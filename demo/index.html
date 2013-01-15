@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Base UI</title>
-    <link rel="stylesheet" href="../dist/base-ui.min.css">
+    <link rel="stylesheet" href="../dist/base-ui.css">
     <link rel="stylesheet" href="demo.css">
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="../dist/base-ui.min.js"></script>
+    <script src="../dist/base-ui.js"></script>
 </head>
 <body>
     <ul class="mobile-top-menu" data-baseui="mobilemenu">
@@ -141,7 +141,7 @@
         <div class="mb20">
             <div class="button dropdown dp-toggle" data-baseui="dropdown">
                 Dropdown <span class="aside"><i class="icon-caret-down"></i></span>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu animated fadeIn">
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>
                     <li class="divider"></li>
@@ -162,6 +162,14 @@
         <p>
             <button class="button" onclick="$.baseui.growl('Hello World!')">Show Message</button>
         </p>
+
+        <h3>Focus Element</h3>
+
+        <div class="focus-element" data-baseui="focuselement">
+            <div class="show">Click me!</div>
+            <div class="hide animated fadeInUp">Now click somewhere else (not in this element)!</div>
+
+        </div>
     </div>
 </body>
 </html>

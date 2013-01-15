@@ -14,3 +14,19 @@ h3 { color: #999; }
     border-right: 1px #fff solid;
     text-align: center;
 }
+
+
+.focus-element {
+    text-align: center;
+    padding: 30px;
+    border: 1px #ccc solid;
+    border-radius: 4px;
+}
+
+.focus-element.baseui-focused {
+    background: red;
+    color: #fff;
+}
+
+.focus-element.baseui-focused .show { display: none;}
+.focus-element.baseui-focused .hide { display: block;}
