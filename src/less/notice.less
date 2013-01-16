@@ -1,0 +1,71 @@
+//
+// notices
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.notice {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: @mainFontLineHeight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: @colorInfoBackground;
+  border: 1px solid @colorInfoBorder;
+  border-radius: @mainBorderRadius;
+}
+.notice,
+.notice h4 {
+  // Specified for the h4 to prevent conflicts of changing @headingsColor
+  color: @colorInfoText;
+}
+.notice h4 {
+  margin: 0;
+}
+
+// Adjust close link position
+.notice .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: @mainFontLineHeight;
+}
+
+
+// Alternate styles
+// -------------------------
+
+.notice-success {
+  background-color: @colorSuccessBackground;
+  border-color: @colorSuccessBorder;
+  color: @colorSuccessText;
+}
+.notice-success h4 {
+  color: @colorSuccessText;
+}
+.notice-danger,
+.notice-error {
+  background-color: @colorErrorBackground;
+  border-color: @colorErrorBorder;
+  color: @colorErrorText;
+}
+.notice-danger h4,
+.notice-error h4 {
+  color: @colorErrorText;
+}
+.notice-info {
+  background-color: @colorInfoBackground;
+  border-color: @colorInfoBorder;
+  color: @colorInfoText;
+}
+.notice-info h4 {
+  color: @colorInfoText;
+}
+.notice-warning {
+  background-color: @colorWarningBackground;
+  border-color: @colorWarningBorder;
+  color: @colorWarningText;
+}
+.notice-warning h4 {
+  color: @colorWarningText;
+}

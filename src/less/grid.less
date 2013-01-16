@@ -40,6 +40,9 @@
             margin: 0 auto; 
         }
     }
+
+    & > .column:first-child, & > .columns:first-child { padding-left: 0;}
+    & > .column:last-child, & > .columns:last-child { padding-right: 0;}
 }
 
 
@@ -151,7 +154,7 @@ ul.block-grid {
 
 /* responsive */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width:  @screenSmall) {
     
     .row {
         margin: 0;
@@ -172,7 +175,7 @@ ul.block-grid {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width:  @screenSmall) {
     
     .wrap {padding: 0px 10px;}
 }

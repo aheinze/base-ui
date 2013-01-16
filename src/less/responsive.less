@@ -1,42 +1,95 @@
+/* Visibility Classes ---------------------- */
+/*                                           */
+/* Standard (large) display targeting */
+.show-for-small,
+.show-for-medium,
+.show-for-medium-down,
+.hide-for-large,
+.hide-for-large-up,
+.show-for-xlarge,
+.show-for-print { display: none !important; }
 
-@media screen and (max-width: 400px) {
-    
-    .hide-on-max400 { display: none; }
-    .show-inline-on-max400 { display: inline-block; }
-    .show-block-on-max400 { display: block; }
+.hide-for-small,
+.hide-for-medium,
+.hide-for-medium-down,
+.show-for-large,
+.show-for-large-up,
+.hide-for-xlarge,
+.hide-for-print { display: inherit !important; }
+
+/* Very large display targeting */
+@media only screen and (min-width: @screenXlarge) {
+.hide-for-small,
+.hide-for-medium,
+.hide-for-medium-down,
+.hide-for-large,
+.show-for-large-up,
+.show-for-xlarge { display: inherit !important; }
+
+.show-for-small,
+.show-for-medium,
+.show-for-medium-down,
+.show-for-large,
+.hide-for-large-up,
+.hide-for-xlarge { display: none !important; }
 }
 
-@media screen and (max-width: 500px) {
-    
-    .hide-on-max500 { display: none; }
-    .show-inline-on-max500 { display: inline-block; }
-    .show-block-on-max500 { display: block; }
+/* Medium display targeting */
+@media only screen and (max-width: @screenMedium) and (min-width: @screenSmall) {
+.hide-for-small,
+.show-for-medium,
+.show-for-medium-down,
+.hide-for-large,
+.hide-for-large-up,
+.hide-for-xlarge { display: inherit !important; }
+
+.show-for-small,
+.hide-for-medium,
+.hide-for-medium-down,
+.show-for-large,
+.show-for-large-up,
+.show-for-xlarge { display: none !important; }
 }
 
-@media screen and (max-width: 600px) {
-    
-    .hide-on-max600 { display: none; }
-    .show-inline-on-max600 { display: inline-block; }
-    .show-block-on-max600 { display: block; }
+/* Small display targeting */
+@media only screen and (max-width: @screenSmall) {
+.show-for-small,
+.hide-for-medium,
+.show-for-medium-down,
+.hide-for-large,
+.hide-for-large-up,
+.hide-for-xlarge { display: inherit !important; }
+
+.hide-for-small,
+.show-for-medium,
+.hide-for-medium-down,
+.show-for-large,
+.show-for-large-up,
+.show-for-xlarge { display: none !important; }
 }
 
-@media screen and (max-width: 700px) {
-    
-    .hide-on-max700 { display: none; }
-    .show-inline-on-max700 { display: inline-block; }
-    .show-block-on-max700 { display: block; }
+/* Orientation targeting */
+.show-for-landscape,
+.hide-for-portrait { display: inherit !important; }
+.hide-for-landscape,
+.show-for-portrait { display: none !important; }
+
+@media screen and (orientation: landscape) {
+.show-for-landscape,
+.hide-for-portrait { display: inherit !important; }
+.hide-for-landscape,
+.show-for-portrait { display: none !important; }
 }
 
-@media screen and (max-width: 800px) {
-    
-    .hide-on-max800 { display: none; }
-    .show-inline-on-max800 { display: inline-block; }
-    .show-block-on-max800 { display: block; }
+@media screen and (orientation: portrait) {
+.show-for-portrait,
+.hide-for-landscape { display: inherit !important; }
+.hide-for-portrait,
+.show-for-landscape { display: none !important; }
 }
 
-@media screen and (max-width: 900px) {
-    
-    .hide-on-max900 { display: none; }
-    .show-inline-on-max900 { display: inline-block; }
-    .show-block-on-max900 { display: block; }
-}
+/* Touch-enabled device targeting */
+.show-for-touch { display: none !important; }
+.hide-for-touch { display: inherit !important; }
+.touch .show-for-touch { display: inherit !important; }
+.touch .hide-for-touch { display: none !important; }

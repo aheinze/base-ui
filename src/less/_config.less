@@ -1,8 +1,8 @@
 // @VARS
 
 
-@mainBackground :             #fff;
-@mainFontFamily :             "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+@mainBackground:             #fff;
+@mainFontFamily:             "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 @mainFontSize:                14px;
 @mainFontLineHeight :         24px;
 @mainFontWeight :             normal;
@@ -22,10 +22,33 @@
 @colorDisabled:               @colorGrayDark;
 @colorDisabledBackground:     @colorSoft;
 
-@inputBorderRadius:           3px;
+@colorInfoText:               #3a87ad;
+@colorInfoBackground:         #d9edf7;
+@colorInfoBorder:             darken(spin(@colorInfoBackground, -10), 7%);
+
+@colorWarningText:            #c09853;
+@colorWarningBackground:      #fcf8e3;
+@colorWarningBorder:          darken(spin(@colorWarningBackground, -10), 3%);
+
+@colorErrorText:              #b94a48;
+@colorErrorBackground:        #f2dede;
+@colorErrorBorder:            darken(spin(@colorErrorBackground, -10), 3%);
+
+@colorSuccessText:            #468847;
+@colorSuccessBackground:      #dff0d8;
+@colorSuccessBorder:          darken(spin(@colorSuccessBackground, -10), 5%);
+
+
+@inputBorderRadius:           @mainBorderRadius;
 @inputBorderColor:            #ccc;
 @inputBackgroundColor:        #fff;
 
+
+// Media Queries
+
+@screenSmall:                 768px;
+@screenMedium:                1279px;
+@screenXlarge:                1441px;
 
 // data-uris
 
