@@ -224,13 +224,11 @@
 
         this.options = $.extend({}, this.options, options);
         this.element = $(element).on("click", ".dp-toggle", function(e){
-            e.preventDefault();
             $this.toggle();
         });
 
         if (this.element.is(".dp-toggle")) {
             this.element.on("click", function(e){
-                e.preventDefault();
                 $this.toggle();
             });
         }
