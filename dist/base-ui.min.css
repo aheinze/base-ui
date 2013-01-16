@@ -154,6 +154,23 @@ a.button,a.button:hover{color:inherit;line-height:1;vertical-align:middle;}
 .button-group .button{border-radius:0;float:left;}.button-group .button:not(:last-child){border-right:none;}
 .button-group .button:first-child{border-radius:3px 0px 0px 3px;}
 .button-group .button:last-child{border-radius:0px 3px 3px 0px;}
+.label,.badge{display:inline-block;padding:2px 4px;font-size:11.844px;font-weight:bold;line-height:14px;color:#fff;vertical-align:baseline;white-space:nowrap;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);background-color:#444444;}
+.label{border-radius:3px;}
+.badge{padding-left:9px;padding-right:9px;border-radius:9px;}
+.label:empty,.badge:empty{display:none;}
+a.label:hover,a.badge:hover{color:#fff;text-decoration:none;cursor:pointer;}
+.label-important,.badge-important{background-color:#b94a48;}
+.label-important[href],.badge-important[href]{background-color:#953b39;}
+.label-warning,.badge-warning{background-color:#c09853;}
+.label-warning[href],.badge-warning[href]{background-color:#a47e3c;}
+.label-success,.badge-success{background-color:#468847;}
+.label-success[href],.badge-success[href]{background-color:#356635;}
+.label-info,.badge-info{background-color:#3a87ad;}
+.label-info[href],.badge-info[href]{background-color:#2d6987;}
+.label-inverse,.badge-inverse{background-color:#444444;}
+.label-inverse[href],.badge-inverse[href]{background-color:#2b2b2b;}
+.button .label,.button .badge{position:relative;top:-1px;}
+.button-mini .label,.button-mini .badge{top:0;}
 .notice{padding:8px 35px 8px 14px;margin-bottom:24px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);background-color:#d9edf7;border:1px solid #bce8f1;border-radius:3px;}
 .notice,.notice h4{color:#3a87ad;}
 .notice h4{margin:0;}
