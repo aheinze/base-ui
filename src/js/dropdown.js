@@ -25,14 +25,14 @@
         },
 
         toggle: function() {
-            this.element.toggleClass("open");
-            active = this.element.hasClass("open") ? this.element : false;
+            this.element.toggleClass("active");
+            active = this.element.hasClass("active") ? this.element : false;
         }
 
     });
 
     $(document).on("click", function() {
-        $(".open[data-baseui]").not(active).removeClass("open");
+        $(".active[data-baseui]").not(active).removeClass("active");
         active = false;
     });
 
