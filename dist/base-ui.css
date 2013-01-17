@@ -701,15 +701,27 @@ input[type="checkbox"] {
 }
 select,
 input[type="file"] {
-  height: 32px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-
   line-height: 22px;
 }
 select {
   width: 220px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appeareance: none;
+  height: auto;
+  padding: 6px;
+  line-height: 24px;
+  outline: none;
+  border: 1px solid #cccccc;
+  background: #ffffff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkM4MDlEOEUxMTE1MTFFMkFCNjFENkJEOURCMTYwN0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkM4MDlEOEYxMTE1MTFFMkFCNjFENkJEOURCMTYwN0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RTUyQjI0MTEwQzkxMUUyQUI2MUQ2QkQ5REIxNjA3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RTUyQjI0MjEwQzkxMUUyQUI2MUQ2QkQ5REIxNjA3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkTJP14AAABrSURBVHjaYpwxY4YoAwPDUiBOBOKnDBAgDcSLgDiCBUisAGInIN4LxLZQBSC2OkgOpKAViG2gAtuhCkDsXyA5JiCxD4hDgfgvEBtD8V+o2D4mqI5NQJzOgADpUDEGFiTBuUAsisQGA4AAAwDlYROryi75kQAAAABJRU5ErkJggg==") top right no-repeat;
+  background-position: 95% center;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  color: #444444;
+  font-size: 14px;
 }
 select[multiple],
 select[size] {
@@ -1053,24 +1065,30 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
 }
 .button.active,
 .button:active {
-  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 .button.green {
-  background-color: #41c121;
+  background-color: #8cc14c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: green;
+  border-color: transparent;
   color: #fff;
 }
 .button.red {
-  background-color: red;
+  background-color: #da314b;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: red;
+  border-color: transparent;
   color: #fff;
 }
 .button.orange {
   background-color: orange;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: orange;
+  border-color: transparent;
+  color: #fff;
+}
+.button.blue {
+  background-color: #00a8e6;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color: transparent;
   color: #fff;
 }
 .button.dark {
@@ -2642,19 +2660,20 @@ ul.icons li [class*=" icon-"] {
 .growlstatus:hover .growlstatus-close {
   display: block;
 }
-.tooltip {
+.baseui-tooltip {
   display: none;
   position: absolute;
   max-width: 200px;
-  padding: 5px 8px;
-  border-radius: 3px;
+  padding: 8px 8px;
   background-color: #000;
+  border-radius: 3px;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
+  line-height: 1;
   z-index: 100000;
 }
-.tooltip:after {
+.baseui-tooltip:after {
   position: absolute;
   display: block;
   width: 0;
@@ -2663,7 +2682,7 @@ ul.icons li [class*=" icon-"] {
   line-height: 0;
   content: "";
 }
-.tooltip[data-direction=b]:after {
+.baseui-tooltip[data-direction=b]:after {
   top: -5px;
   left: 50%;
   margin-left: -5px;
@@ -2673,7 +2692,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-bottom-color: #000;
 }
-.tooltip[data-direction=bl]:after {
+.baseui-tooltip[data-direction=bl]:after {
   top: -5px;
   left: 10px;
   border-bottom-style: solid;
@@ -2682,7 +2701,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-bottom-color: #000;
 }
-.tooltip[data-direction=br]:after {
+.baseui-tooltip[data-direction=br]:after {
   top: -5px;
   right: 10px;
   border-bottom-style: solid;
@@ -2691,7 +2710,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-bottom-color: #000;
 }
-.tooltip[data-direction=t]:after {
+.baseui-tooltip[data-direction=t]:after {
   bottom: -5px;
   left: 50%;
   margin-left: -5px;
@@ -2701,7 +2720,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-top-color: #000;
 }
-.tooltip[data-direction=tl]:after {
+.baseui-tooltip[data-direction=tl]:after {
   bottom: -5px;
   left: 10px;
   border-top-style: solid;
@@ -2710,7 +2729,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-top-color: #000;
 }
-.tooltip[data-direction=tr]:after {
+.baseui-tooltip[data-direction=tr]:after {
   bottom: -5px;
   right: 10px;
   border-top-style: solid;
@@ -2719,7 +2738,7 @@ ul.icons li [class*=" icon-"] {
   border-right-color: transparent;
   border-top-color: #000;
 }
-.tooltip[data-direction=l]:after {
+.baseui-tooltip[data-direction=l]:after {
   right: -5px;
   top: 50%;
   margin-top: -5px;
@@ -2729,7 +2748,7 @@ ul.icons li [class*=" icon-"] {
   border-bottom-color: transparent;
   border-left-color: #000;
 }
-.tooltip[data-direction=r]:after {
+.baseui-tooltip[data-direction=r]:after {
   left: -5px;
   top: 50%;
   margin-top: -5px;

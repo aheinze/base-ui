@@ -36,6 +36,7 @@
             <button class="button red">Red</button>
             <button class="button green">Green</button> 
             <button class="button orange">Orange</button> 
+            <button class="button blue">Blue</button> 
             <button class="button dark">Dark</button> 
         </p>
         
@@ -148,7 +149,7 @@
         <div class="mb20">
             <div class="button dropdown dp-toggle" data-baseui="dropdown">
                 Dropdown <span class="aside"><i class="icon-caret-down"></i></span>
-                <ul class="dropdown-menu pull-right animated fadeIn">
+                <ul class="dropdown-menu animated fadeIn">
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>
                     <li class="divider"></li>
@@ -175,7 +176,45 @@
         <div class="focus-element" data-baseui="focuselement">
             <div class="show">Click me!</div>
             <div class="hide animated fadeInUp">Now click somewhere else (not in this element)!</div>
-
+        </div>
+        
+        <h3>Tooltip</h3>
+        <div>
+            <p>
+                <button class="button" data-baseui="tip" title="Hello World">Hover me</button> Default tooltip without options
+            </p>
+            
+            <p>
+                <button class="button" data-baseui="tip>pos:'t'" title="Hello World">Hover me</button> Tooltip at the <strong>top</strong> <code>{pos: 't'}</code>
+            </p>
+            
+            <p>
+                <button class="button" data-baseui="tip>pos:'r'" title="Hello World">Hover me</button> Tooltip at the <strong>right</strong> <code>{pos: 'r'}</code>
+            </p>
+            
+            <p>
+                <button class="button" data-baseui="tip>pos:'b'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom</strong> <code>{pos: 'b'}</code>
+            </p>
+            
+            <p>
+                <button class="button" data-baseui="tip>pos:'l'" title="Hello World">Hover me</button> Tooltip at the <strong>left</strong> <code>{pos: 'l'}</code>
+            </p>
+            
+            <p>
+                <button class="button" data-baseui="tip>pos:'tl'" title="Hello World">Hover me</button> Tooltip at the <strong>top left</strong> <code>{pos: 'tl'}</code>
+            </p>
+                    
+            <p>
+                <button class="button" data-baseui="tip>pos:'tr'" title="Hello World">Hover me</button> Tooltip at the <strong>top right</strong> <code>{pos: 'tr'}</code>
+            </p>
+                    
+            <p>
+                <button class="button" data-baseui="tip>pos:'bl'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom left</strong> <code>{pos: 'bl'}</code>
+            </p>
+                    
+            <p>
+                <button class="button" data-baseui="tip>pos:'br'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom right</strong> <code>{pos: 'br'}</code>
+            </p>
         </div>
     </div>
 </body>

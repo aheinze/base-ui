@@ -613,10 +613,10 @@
 
     });
 
-    UI["tip"] = Tooltip;
+    UI.fn.tip = Tooltip;
 
     $(function(){
-        $tooltip = $('<div class="tooltip"></div>').appendTo("body");
+        $tooltip = $('<div class="baseui-tooltip"></div>').appendTo("body");
     });
 
 })(jQuery, jQuery.baseui);
