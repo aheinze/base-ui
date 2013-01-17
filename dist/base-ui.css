@@ -2642,6 +2642,103 @@ ul.icons li [class*=" icon-"] {
 .growlstatus:hover .growlstatus-close {
   display: block;
 }
+.tooltip {
+  display: none;
+  position: absolute;
+  max-width: 200px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  z-index: 100000;
+}
+.tooltip:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 5px dashed #000;
+  line-height: 0;
+  content: "";
+}
+.tooltip[data-direction=b]:after {
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #000;
+}
+.tooltip[data-direction=bl]:after {
+  top: -5px;
+  left: 10px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #000;
+}
+.tooltip[data-direction=br]:after {
+  top: -5px;
+  right: 10px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #000;
+}
+.tooltip[data-direction=t]:after {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000;
+}
+.tooltip[data-direction=tl]:after {
+  bottom: -5px;
+  left: 10px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000;
+}
+.tooltip[data-direction=tr]:after {
+  bottom: -5px;
+  right: 10px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000;
+}
+.tooltip[data-direction=l]:after {
+  right: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-left-style: solid;
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: #000;
+}
+.tooltip[data-direction=r]:after {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-right-style: solid;
+  border-left: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: #000;
+}
 .growlstatus-close,
 .modal-close,
 .topbox-close {
