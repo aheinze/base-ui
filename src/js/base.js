@@ -74,7 +74,7 @@
     $.fn.baseui = function (fn, options) {
 
         if (!UI.fn[fn]) {
-            $.error("Base UI component [" + fn + "] does not exist.");
+            //$.error("Base UI component [" + fn + "] does not exist.");
             return this;
         }
 

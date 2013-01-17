@@ -74,7 +74,7 @@
     $.fn.baseui = function (fn, options) {
 
         if (!UI.fn[fn]) {
-            $.error("Base UI component [" + fn + "] does not exist.");
+            //$.error("Base UI component [" + fn + "] does not exist.");
             return this;
         }
 
@@ -143,8 +143,9 @@
 
         this.element.on("click", function(e){
             e.preventDefault();
+            
             $this.toggle();
-            $(his).blur();
+            $(this).blur();
         });
     }
     
@@ -155,6 +156,7 @@
         },
 
         toggle: function() {
+
             this.element.toggleClass("active");
             this.hidden.val(this.element.hasClass("active") ? 1:0);
         },
@@ -250,7 +252,7 @@
     });
 
     $(document).on("click", function() {
-        $(".active[data-baseui]").not(active).removeClass("active");
+        $(".active[data-baseui^='dropdown']").not(active).removeClass("active");
         active = false;
     });
 

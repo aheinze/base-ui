@@ -61,7 +61,8 @@ module.exports = function(grunt) {
                       "src/js/menu.js",
                       "src/js/modal.js",
                       "src/js/tooltip.js",
-                      "src/js/topbox.js"],
+                      "src/js/topbox.js"
+                      ],
                 dest: "dist/base-ui.js"
             }
         },

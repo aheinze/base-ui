@@ -9,14 +9,14 @@
   color: #333;
   line-height: 1;
   vertical-align: middle;
-  background-color: #fff;
-  border: 1px solid #bbbbbb;
-  .gradiantFromTop(transparent, rgba(0,0,0,0.2));
+  background-color: #eee;
+
+  // .gradiantFromTop(transparent, rgba(0,0,0,0.2));
 
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 
   &.active, &:hover {
-    .gradiantFromTop(rgba(0,0,0,0.2), transparent);
+    .gradiantFromTop(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
   }
 
   &.active, &:active {
@@ -26,25 +26,21 @@
   &.green {
     background-color: #8cc14c;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    border-color: transparent;
     color: #fff;
   }
   &.red {
     background-color: #da314b;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    border-color: transparent;
     color: #fff;
   }
   &.orange {
     background-color: orange;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    border-color: transparent;
     color: #fff;
   }
   &.blue {
     background-color: #00a8e6;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    border-color: transparent;
     color: #fff;
   }
   &.dark {

@@ -18,8 +18,9 @@
 
         this.element.on("click", function(e){
             e.preventDefault();
+            
             $this.toggle();
-            $(his).blur();
+            $(this).blur();
         });
     }
     
@@ -30,6 +31,7 @@
         },
 
         toggle: function() {
+
             this.element.toggleClass("active");
             this.hidden.val(this.element.hasClass("active") ? 1:0);
         },

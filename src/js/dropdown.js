@@ -32,7 +32,7 @@
     });
 
     $(document).on("click", function() {
-        $(".active[data-baseui]").not(active).removeClass("active");
+        $(".active[data-baseui^='dropdown']").not(active).removeClass("active");
         active = false;
     });
 

@@ -1048,20 +1048,15 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
   color: #333;
   line-height: 1;
   vertical-align: middle;
-  background-color: #fff;
-  border: 1px solid #bbbbbb;
-  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
-  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
-  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+  background-color: #eee;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 .button.active,
 .button:hover {
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 .button.active,
 .button:active {
@@ -1070,25 +1065,21 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
 .button.green {
   background-color: #8cc14c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: transparent;
   color: #fff;
 }
 .button.red {
   background-color: #da314b;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: transparent;
   color: #fff;
 }
 .button.orange {
   background-color: orange;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: transparent;
   color: #fff;
 }
 .button.blue {
   background-color: #00a8e6;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: transparent;
   color: #fff;
 }
 .button.dark {
