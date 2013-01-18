@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Base UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../dist/base-ui.css">
     <link rel="stylesheet" href="demo.css">
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -13,48 +14,49 @@
         <li class="seperator">
             <strong><span class="icon-list"></span> Base UI</strong>
             <ul>
-                <li><a href="">Test</a></li>
-                <li><a href="">Test</a></li>
-                <li><a href="">Test</a></li>
-                <li><a href="">Test</a></li>
-                <li><a href="">Test</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#components">Components</a></li>
             </ul>
         </li>
         <li class="right"><a href="https://github.com/aheinze/base-ui"><span class="icon-github-sign"></span></a></li>
     </ul>
     <div class="wrap">
         
-        <h1>Base UI</h1>
+        <h1><a name="layout"></a>Base UI</h1>
 
 
         <h2>Layout</h2>
 
-
-        <h3>Button</h3>
-        <p>
-            <button class="button">Button</button> 
-            <button class="button red">Red</button>
-            <button class="button green">Green</button> 
-            <button class="button orange">Orange</button> 
-            <button class="button blue">Blue</button> 
-            <button class="button dark">Dark</button> 
-        </p>
-        
-        <p>
-            <button class="button button-large">Button</button> 
-            <button class="button">Button</button> 
-            <button class="button button-small">Button</button> 
-            <button class="button button-mini">Button</button> 
-        </p>
-
-        <h3>Group of Buttons</h3>
-        <p>
-            <div class="button-group">
-                <button class="button">Button A</button>
-                <button class="button">Button B</button>
-                <button class="button">Button C</button>
+        <div class="row">
+            <div class="six columns">
+                <h3>Button</h3>
+                <p>
+                    <button class="button">Button</button> 
+                    <button class="button red">Red</button>
+                    <button class="button green">Green</button> 
+                    <button class="button orange">Orange</button> 
+                    <button class="button blue">Blue</button> 
+                    <button class="button dark">Dark</button> 
+                </p>
+                
+                <p>
+                    <button class="button button-large">Button</button> 
+                    <button class="button">Button</button> 
+                    <button class="button button-small">Button</button> 
+                    <button class="button button-mini">Button</button> 
+                </p> 
             </div>
-        </p>
+            <div class="six columns">
+                <h3>Group of Buttons</h3>
+                <p>
+                    <div class="button-group">
+                        <button class="button">Button A</button>
+                        <button class="button">Button B</button>
+                        <button class="button">Button C</button>
+                    </div>
+                </p>
+            </div>
+        </div>
 
         <h3>Icons - by Font Awesome</h3>
 
@@ -62,6 +64,8 @@
             <button class="button"><i class="icon-star"></i> Button</button> 
             <button class="button red"><i class="icon-remove"></i> Button</button> 
             <button class="button green"><i class="icon-ok"></i> Button</button> 
+            <button class="button blue"><i class="icon-pencil"></i> Button</button> 
+            <button class="button dark"><i class="icon-tag"></i> Button</button> 
 
             <br>
             <br>
@@ -117,17 +121,39 @@
             <div class="six columns">c-6</div>
         </div>
         
-        <h3>Form</h3>
+        <h3>Form elements</h3>
         
         <form action="">
-            <input type="text" placeholder="Textbox"> 
-            <select name="" id="">
-                <option value="">Option 1</option>
-                <option value="">Option 2</option>
-            </select>
+            <div class="row">
+                <div class="four columns">
+                    <input class="wide" type="text" placeholder="Textbox"> 
+                    <input class="wide" type="password" placeholder="Password"> 
+            
+                    <input type="checkbox"> Checkbox <br>
+                    <input type="radio"> Radio 
+                </div>
+                <div class="four columns">
+                    <select class="wide">
+                        <option value="">Selectbox</option>
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                    </select>
+
+                    <select class="wide" multiple>
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                    </select>
+                </div>
+                <div class="four columns">
+                    <textarea class="wide" style="min-height:130px;" placeholder="textarea"></textarea>
+                </div>
+            </div>
+
+            
+
         </form>
 
-        <h2>Components</h2>
+        <h2><a name="components"></a>Components</h2>
 
         <h3>Buttons</h3>
         
@@ -179,42 +205,53 @@
         </div>
         
         <h3>Tooltip</h3>
+
+        <p>
+            <button class="button" data-baseui="tip" title="Hello World">Hover me</button> Default tooltip without options
+        </p>
+
+        <div class="row">
+            <div class="six columns">
+                <p>
+                    <button class="button" data-baseui="tip>pos:'t'" title="Hello World">Hover me</button> Tooltip at the <strong>top</strong> <code>{pos: 't'}</code>
+                </p>
+                
+                <p>
+                    <button class="button" data-baseui="tip>pos:'r'" title="Hello World">Hover me</button> Tooltip at the <strong>right</strong> <code>{pos: 'r'}</code>
+                </p>
+                
+                <p>
+                    <button class="button" data-baseui="tip>pos:'b'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom</strong> <code>{pos: 'b'}</code>
+                </p>
+                
+                <p>
+                    <button class="button" data-baseui="tip>pos:'l'" title="Hello World">Hover me</button> Tooltip at the <strong>left</strong> <code>{pos: 'l'}</code>
+                </p>
+            </div>
+            <div class="six columns">
+                <p>
+                    <button class="button" data-baseui="tip>pos:'tl'" title="Hello World">Hover me</button> Tooltip at the <strong>top left</strong> <code>{pos: 'tl'}</code>
+                </p>
+                        
+                <p>
+                    <button class="button" data-baseui="tip>pos:'tr'" title="Hello World">Hover me</button> Tooltip at the <strong>top right</strong> <code>{pos: 'tr'}</code>
+                </p>
+                        
+                <p>
+                    <button class="button" data-baseui="tip>pos:'bl'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom left</strong> <code>{pos: 'bl'}</code>
+                </p>
+                        
+                <p>
+                    <button class="button" data-baseui="tip>pos:'br'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom right</strong> <code>{pos: 'br'}</code>
+                </p>
+            </div>
+        </div>
         <div>
-            <p>
-                <button class="button" data-baseui="tip" title="Hello World">Hover me</button> Default tooltip without options
-            </p>
             
-            <p>
-                <button class="button" data-baseui="tip>pos:'t'" title="Hello World">Hover me</button> Tooltip at the <strong>top</strong> <code>{pos: 't'}</code>
-            </p>
             
-            <p>
-                <button class="button" data-baseui="tip>pos:'r'" title="Hello World">Hover me</button> Tooltip at the <strong>right</strong> <code>{pos: 'r'}</code>
-            </p>
+
             
-            <p>
-                <button class="button" data-baseui="tip>pos:'b'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom</strong> <code>{pos: 'b'}</code>
-            </p>
-            
-            <p>
-                <button class="button" data-baseui="tip>pos:'l'" title="Hello World">Hover me</button> Tooltip at the <strong>left</strong> <code>{pos: 'l'}</code>
-            </p>
-            
-            <p>
-                <button class="button" data-baseui="tip>pos:'tl'" title="Hello World">Hover me</button> Tooltip at the <strong>top left</strong> <code>{pos: 'tl'}</code>
-            </p>
-                    
-            <p>
-                <button class="button" data-baseui="tip>pos:'tr'" title="Hello World">Hover me</button> Tooltip at the <strong>top right</strong> <code>{pos: 'tr'}</code>
-            </p>
-                    
-            <p>
-                <button class="button" data-baseui="tip>pos:'bl'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom left</strong> <code>{pos: 'bl'}</code>
-            </p>
-                    
-            <p>
-                <button class="button" data-baseui="tip>pos:'br'" title="Hello World">Hover me</button> Tooltip at the <strong>bottom right</strong> <code>{pos: 'br'}</code>
-            </p>
+
         </div>
     </div>
 </body>

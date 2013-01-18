@@ -25,7 +25,7 @@
     growlContainer.prepend(this.status);
 
     //bind close button
-    this.status.delegate(".growlstatus-close", 'click', function(){
+    this.status.delegate(".growlstatus-close", UI.util.clickevent, function(){
       $this.close(true);
     });
 

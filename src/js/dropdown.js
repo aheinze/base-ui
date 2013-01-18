@@ -7,7 +7,7 @@
         var $this = this;
 
         this.options = $.extend({}, this.options, options);
-        this.element = $(element).on("click", ".dp-toggle", function(e){
+        this.element = $(element).on(UI.util.clickevent, ".dp-toggle", function(e){
             $this.toggle();
         });
 
@@ -31,7 +31,7 @@
 
     });
 
-    $(document).on("click", function() {
+    $(document).on(UI.util.clickevent, function() {
         $(".active[data-baseui^='dropdown']").not(active).removeClass("active");
         active = false;
     });

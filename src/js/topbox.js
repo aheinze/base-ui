@@ -47,7 +47,7 @@
             if(!this.options.closeBtn) {
                 this.box.find(".topbox-close").hide();
             } else {
-                this.box.find(".topbox-close").bind("click",function(){
+                this.box.find(".topbox-close").bind(UI.util.clickevent,function(){
                     $this.close();
                 });   
             }

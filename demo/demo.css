@@ -2,6 +2,10 @@ body {
     padding-bottom: 60px;
 }
 
+.mobile-top-menu {
+    position: fixed;
+    width: 100%;
+}
 
 h3 { color: #999; }
 

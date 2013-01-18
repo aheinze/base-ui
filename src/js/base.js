@@ -37,8 +37,14 @@
         return true && win.MutationObserver || win.WebKitMutationObserver;
     })();
 
+    UI.supports.touch  = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    
+
     // util
     //---------------------------------------------------------
+    
+    UI.util.clickevent = UI.supports.touch ? 'touchstart':'click';
+
     UI.util.initByDataAttr = function(context) {
 
         $(context || doc).find("[data-baseui]:not([data-baseui-skip])").each(function(){

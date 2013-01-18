@@ -37,8 +37,14 @@
         return true && win.MutationObserver || win.WebKitMutationObserver;
     })();
 
+    UI.supports.touch  = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    
+
     // util
     //---------------------------------------------------------
+    
+    UI.util.clickevent = UI.supports.touch ? 'touchstart':'click';
+
     UI.util.initByDataAttr = function(context) {
 
         $(context || doc).find("[data-baseui]:not([data-baseui-skip])").each(function(){
@@ -227,7 +233,7 @@
         var $this = this;
 
         this.options = $.extend({}, this.options, options);
-        this.element = $(element).on("click", ".dp-toggle", function(e){
+        this.element = $(element).on(UI.util.clickevent, ".dp-toggle", function(e){
             $this.toggle();
         });
 
@@ -251,7 +257,7 @@
 
     });
 
-    $(document).on("click", function() {
+    $(document).on(UI.util.clickevent, function() {
         $(".active[data-baseui^='dropdown']").not(active).removeClass("active");
         active = false;
     });
@@ -282,7 +288,7 @@
 
         if (!eventregistred) {
 
-            $(document).on("click focus", function(e){
+            $(document).on(UI.util.clickevent, function(e){
 
                 signElements($(e.target));
             });
@@ -320,7 +326,7 @@
     growlContainer.prepend(this.status);
 
     //bind close button
-    this.status.delegate(".growlstatus-close", 'click', function(){
+    this.status.delegate(".growlstatus-close", UI.util.clickevent, function(){
       $this.close(true);
     });
 
@@ -518,7 +524,7 @@
             e.preventDefault();
             UI.modal.close();
         }
-    }).delegate(".modal-close", "click", function(){
+    }).delegate(".modal-close", UI.util.clickevent, function(){
         UI.modal.close();
     });
 
@@ -672,7 +678,7 @@
             if(!this.options.closeBtn) {
                 this.box.find(".topbox-close").hide();
             } else {
-                this.box.find(".topbox-close").bind("click",function(){
+                this.box.find(".topbox-close").bind(UI.util.clickevent,function(){
                     $this.close();
                 });   
             }

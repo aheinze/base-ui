@@ -104,7 +104,7 @@
             e.preventDefault();
             UI.modal.close();
         }
-    }).delegate(".modal-close", "click", function(){
+    }).delegate(".modal-close", UI.util.clickevent, function(){
         UI.modal.close();
     });
 

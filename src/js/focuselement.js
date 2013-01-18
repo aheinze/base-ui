@@ -20,7 +20,7 @@
 
         if (!eventregistred) {
 
-            $(document).on("click focus", function(e){
+            $(document).on(UI.util.clickevent, function(e){
 
                 signElements($(e.target));
             });
