@@ -1,0 +1,17 @@
+ul {
+    .resetlist();
+
+    &.square, &.circle, &.disc { margin-left: 20px; }
+    &.square { list-style-type: square; }
+    &.circle { list-style-type: circle; }
+    &.disc { list-style-type: disc; }
+
+    li ul { list-style: inherit; }
+
+    &.striped > li {
+        padding: 5px;
+
+        &:not(:last-child) { border-bottom: 1px solid @mainBorderColor; }
+        
+    }
+}

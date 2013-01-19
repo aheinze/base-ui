@@ -807,6 +807,34 @@ table.nice tr:last-child {
 table.nice tr:last-child td {
   padding-bottom: 16px;
 }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.square,
+ul.circle,
+ul.disc {
+  margin-left: 20px;
+}
+ul.square {
+  list-style-type: square;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.disc {
+  list-style-type: disc;
+}
+ul li ul {
+  list-style: inherit;
+}
+ul.striped > li {
+  padding: 5px;
+}
+ul.striped > li:not(:last-child) {
+  border-bottom: 1px solid #dddddd;
+}
 .wrap {
   width: 1000px;
   max-width: 100%;
