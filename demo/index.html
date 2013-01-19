@@ -61,15 +61,14 @@
         <h3>Icons - by Font Awesome</h3>
 
         <p>
-            <button class="button"><i class="icon-star"></i> Button</button> 
-            <button class="button red"><i class="icon-remove"></i> Button</button> 
-            <button class="button green"><i class="icon-ok"></i> Button</button> 
-            <button class="button blue"><i class="icon-pencil"></i> Button</button> 
-            <button class="button dark"><i class="icon-tag"></i> Button</button> 
+            <button class="button primary"><i class="icon-star"></i> Button</button> 
+            <button class="button error"><i class="icon-remove"></i> Button</button> 
+            <button class="button success"><i class="icon-ok"></i> Button</button> 
+            <button class="button warning"><i class="icon-pencil"></i> Button</button> 
 
             <br>
             <br>
-            Find a full list of icons <a href="http://fortawesome.github.com/Font-Awesome">here</a>
+            Full list of icons <a href="http://fortawesome.github.com/Font-Awesome">here</a>
         </p>
         
         <h3>Code</h3>
@@ -247,14 +246,6 @@
                     <li>Item 5</li>
                     <li>Item 6</li>
                 </ul>
-                <ul class="disc">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                    <li>Item 5</li>
-                    <li>Item 6</li>
-                </ul>
             </div>
         </div>
 
@@ -290,61 +281,77 @@
 
         </form>
 
-        <h2><a name="components"></a>Components</h2>
+        <h2 style="margin-top:40px;"><a name="components"></a>Components</h2>
 
-        <h3>Buttons</h3>
-        
-        Simple status button:
-        <p>
-            <button class="button" data-baseui="button > name:'test'">Button</button> 
-        </p>
-        
-        Radio groups:
-        <p>
-            <div class="button-group" data-baseui="radiogroup > name:'radiogroup', value:1">
-                <button class="button" data-value="1">On</button>
-                <button class="button" data-value="2">Off</button>
+        <div class="row">
+            <div class="four columns">
+                <h3>Status Button</h3>
+                
+                <p>
+                    <button class="button" data-baseui="button > name:'test'">Button</button> 
+                </p>
             </div>
-        </p>
+            <div class="four columns">
+                <h3>Radio group</h3>
+                <p>
+                    <div class="button-group" data-baseui="radiogroup > name:'radiogroup', value:1">
+                        <button class="button" data-value="1">On</button>
+                        <button class="button" data-value="2">Off</button>
+                    </div>
+                </p>
+            </div>
+            <div class="four columns">
 
-        <h3>Dropdowns</h3>
+                <h3>Dropdown</h3>
 
-        <div class="mb20">
-            <div class="button dropdown dp-toggle" data-baseui="dropdown">
-                Dropdown <span class="aside"><i class="icon-caret-down"></i></span>
-                <ul class="dropdown-menu animated fadeIn">
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Item 3</a></li>
-                </ul>
-            </div> 
+
+                <div class="button dropdown dp-toggle" data-baseui="dropdown">
+                    Dropdown <span class="aside"><i class="icon-caret-down"></i></span>
+                    <ul class="dropdown-menu animated fadeIn">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Item 3</a></li>
+                    </ul>
+                </div> 
+
+            </div>
         </div>
 
-        <h3>Dialogs</h3>
 
-        <p>
-            <button class="button" onclick="$.baseui.modal('Hello World!')">Open Modal</button> 
-            <button class="button" onclick="$.baseui.topbox.alert('Hello World!')">Open Topbox</button>
-        </p>
+        <div class="row">
+            <div class="four columns">
+                <h3>Dialogs</h3>
 
-        <h3>Growl</h3>
+                <p>
+                    <button class="button" onclick="$.baseui.modal('Hello World!', {effect:'bounceInDown'})">Open Modal</button> 
+                    <button class="button" onclick="$.baseui.topbox.alert('Hello World!')">Open Topbox</button>
+                </p>
+            </div>
+            <div class="four columns">
+                <h3>Growl</h3>
 
-        <p>
-            <button class="button" onclick="$.baseui.growl('Hello World!')">Show Message</button>
-        </p>
+                <p>
+                    <button class="button" onclick="$.baseui.growl('Hello World!')">Show Message</button>
+                </p>
+            </div>
+            <div class="four columns">
 
-        <h3>Focus Element</h3>
+                <h3>Focus Element</h3>
 
-        <div class="focus-element" data-baseui="focuselement">
-            <div class="show">Click me!</div>
-            <div class="hide animated fadeInUp">Now click somewhere else (not in this element)!</div>
+                <div class="focus-element" data-baseui="focuselement">
+                    <div class="show">Click me!</div>
+                    <div class="hide animated fadeInUp">Now click somewhere else <br>(not in this element)!</div>
+                </div>
+
+            </div>
         </div>
+
         
         <h3>Tooltip</h3>
 
-        <p>
-            <button class="button" data-baseui="tip" title="Hello World">Hover me</button> Default tooltip without options
+        <p class="mb30">
+            <button class="button orange" data-baseui="tip" title="Hello World">Hover me</button> Default tooltip without options
         </p>
 
         <div class="row">
