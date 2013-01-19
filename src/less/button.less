@@ -1,15 +1,18 @@
 .button {
   display: inline-block;
   position: relative;
-  font-family: inherit;
   padding: 10px 10px;
   border-style: none;
   border-radius: 3px;
   text-decoration: none;
+  font-family: inherit;
+  text-align: center;
   color: #333;
-  line-height: 1;
+  line-height: @mainFontLineHeight;
   vertical-align: middle;
   background-color: #eee;
+
+  min-width: 42px;
 
   // .gradiantFromTop(transparent, rgba(0,0,0,0.2));
 
@@ -53,37 +56,39 @@
 
 a.button, a.button:hover {
   color: inherit;
-  line-height: 1;
   vertical-align: middle;
 }
 
 .button-mini {
-  padding: 3px 3px;
+  padding: 3px 6px;
   font-size: 11px;
+  min-width: 33px;
 }
 
 .button-small {
-  padding: 6px 6px;
+  padding: 6px 10px;
   font-size: 12px;
+  min-width: 36px;
 }
 
 .button-large {
   padding: 15px 15px;
   font-size: 16px;
+  min-width: 48px;
 }
 
 
 .button-group {
   
   display: inline-block;
-  line-height: @mainFontLineHeight;
+  line-height: 1;
 
   .hasclearfix();
 
   .button {
     border-radius: 0;
     float:left;
-    line-height: 1;
+    line-height: @mainFontLineHeight;;
 
     &:not(:last-child){
       border-right: none;
@@ -94,5 +99,12 @@ a.button, a.button:hover {
   }
   .button:last-child {
     border-radius: 0px 3px 3px 0px;
+  }
+}
+
+.button-group.row {
+  display: block;
+  .button {
+    display:block;
   }
 }

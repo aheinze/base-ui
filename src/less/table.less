@@ -1,0 +1,38 @@
+
+table {
+    width: 100%;
+    td, th {
+        text-align: left;
+        padding: 4px;
+        vertical-align: top;
+    }
+}
+
+table.nice {
+
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
+
+    tr {
+        border-bottom: 1px #eee dotted;
+
+        th, td {
+            padding: 6px;
+
+            &:first-child { padding-left: 16px; }
+            &:last-child { padding-right: 16px; }
+        }
+    }
+
+    tr:first-child {
+        border-radius: @mainBorderRadius @mainBorderRadius 0 0;
+
+        th, td { padding-top: 16px; }
+    }
+
+    tr:last-child {
+        border-radius: 0 0 @mainBorderRadius @mainBorderRadius;
+        border-bottom: none;
+        td { padding-bottom: 16px; }
+    }
+}

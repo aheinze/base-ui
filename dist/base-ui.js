@@ -43,7 +43,7 @@
     // util
     //---------------------------------------------------------
     
-    UI.util.clickevent = UI.supports.touch ? 'touchstart':'click';
+    UI.util.clickevent = UI.supports.touch ? 'click':'click';
 
     UI.util.initByDataAttr = function(context) {
 

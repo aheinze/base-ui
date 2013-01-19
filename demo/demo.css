@@ -19,6 +19,9 @@ h3 { color: #999; }
     text-align: center;
 }
 
+table.nice {
+    background-color: rgba(247,247,247,0.5);
+}
 
 .focus-element {
     text-align: center;
