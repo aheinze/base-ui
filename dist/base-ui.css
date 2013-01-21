@@ -1151,25 +1151,33 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
   box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 .button.green,
-.button.success {
+.button.success,
+.button a.button.green:hover,
+.button a.button.success:hover {
   background-color: #8cc14c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
 .button.red,
-.button.error {
+.button.error,
+.button a.button.red:hover,
+.button a.button.error:hover {
   background-color: #da314b;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
 .button.orange,
-.button.warning {
+.button.warning,
+.button a.button.orange:hover,
+.button a.button.warning:hover {
   background-color: orange;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
 .button.blue,
-.button.primary {
+.button.primary,
+.button a.button.blue:hover,
+.button a.button.primary:hover {
   background-color: #00a8e6;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
@@ -1182,7 +1190,6 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
 }
 a.button,
 a.button:hover {
-  color: inherit;
   vertical-align: middle;
 }
 .button-mini {
