@@ -854,6 +854,9 @@ ul.striped > li:not(:last-child) {
 .row .row.collapse {
   margin: 0;
 }
+.row.magnet {
+  margin: 0 -15px;
+}
 .row.collapse .columns,
 .row.collapse .column {
   padding: 0;
@@ -869,14 +872,6 @@ ul.striped > li:not(:last-child) {
 .row .columns.centered {
   float: none;
   margin: 0 auto;
-}
-.row > .column:first-child,
-.row > .columns:first-child {
-  padding-left: 0;
-}
-.row > .column:last-child,
-.row > .columns:last-child {
-  padding-right: 0;
 }
 .one,
 .row .one {
