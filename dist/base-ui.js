@@ -555,7 +555,7 @@
                 if(movebody) {
                     var html = $("html");
                     html.css("width", $("body").width()).addClass("has-active-modal-panel").width();
-                    html.css("margin-left", content.width() * (content.hasClass("right") ? -1:1));
+                    html.css("margin-left", content.width() * (content.hasClass("panel-right") ? -1:1));
                 }
             }
 

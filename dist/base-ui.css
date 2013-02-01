@@ -2603,7 +2603,7 @@ html.has-active-modal-panel {
   -webkit-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
 }
-.modal-panel .modal-panel-content.right {
+.modal-panel .modal-panel-content.panel-right {
   left: auto;
   right: 0;
 }
