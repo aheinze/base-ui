@@ -54,6 +54,7 @@ module.exports = function(grunt) {
                     separator: "\n\n"
                 },
                 src: ["src/js/base.js",
+                      "src/js/special-events.js",
                       "src/js/button.js",
                       "src/js/dropdown.js",
                       "src/js/focuselement.js",

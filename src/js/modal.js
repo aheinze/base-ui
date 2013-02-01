@@ -99,7 +99,7 @@
         });
     };
 
-    $(document).bind('keydown.modal', function (e) {
+    $(document).on('keydown.modal', function (e) {
         if (current && e.keyCode === 27) { // ESC
             e.preventDefault();
             UI.modal.close();
@@ -108,7 +108,7 @@
         UI.modal.close();
     });
 
-    $win.bind('resize.modal', function(){
+    $win.on('resize.modal', function(){
         
         if(!current) return;
 

@@ -19,8 +19,8 @@
                     html.css("margin-left", content.width() * (content.hasClass("panel-right") ? -1:1));
                 }
             }
-
-            $(document).on(UI.util.clickevent+".modal-panel", '.modal-panel',function(e) {
+            
+            $(document).on("swiperight.modal-panel swipeleft.modal-panel", '.modal-panel',function(e) {
                 
                 var target = $(e.target);
 
@@ -29,6 +29,11 @@
                 }
 
                 ModalPanel.hide();
+
+            }).on('keydown.modal-panel', function (e) {
+                if (e.keyCode === 27) { // ESC
+                    ModalPanel.hide();
+                }
             });
         },
 
@@ -42,7 +47,7 @@
 
             $(".modal-panel").hide().removeClass("active");
 
-            $(document).off(UI.util.clickevent+".modal-panel");
+            $(document).off(".modal-panel");
         }
     };
 
