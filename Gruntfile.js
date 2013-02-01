@@ -60,6 +60,7 @@ module.exports = function(grunt) {
                       "src/js/growl.js",
                       "src/js/menu.js",
                       "src/js/modal.js",
+                      "src/js/modalpanel.js",
                       "src/js/tooltip.js",
                       "src/js/topbox.js"
                       ],
