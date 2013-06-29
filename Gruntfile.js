@@ -108,7 +108,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
 
     // Register grunt tasks
-    grunt.registerTask("build", ["jshint", "less", "concat", "uglify", "copy"]);
+    grunt.registerTask("build", ["less", "concat", "uglify", "copy"]);
     grunt.registerTask("default", ["build"]);
+    grunt.registerTask("jshint", ["jshint"]);
 
 };
