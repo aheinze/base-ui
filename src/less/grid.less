@@ -6,24 +6,24 @@
     padding: 0 20px;
 }
 
-.row { 
+.row {
 
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0 -15px;
 
-    .row { 
-        width: auto; 
-        max-width: none; 
-        min-width: 0; 
+    .row {
+        width: auto;
+        max-width: none;
+        min-width: 0;
         margin: 0 -15px;
 
         &.collapse {
-            margin: 0; 
+            margin: 0;
         }
     }
 
     &.collapse {
-        
+
         .columns, .column {
             padding: 0;
         }
@@ -31,14 +31,14 @@
 
    .column, .columns {
 
-        float: left; 
-        min-height: 1px; 
-        padding: 0 15px; 
+        float: left;
+        min-height: 1px;
+        padding: 0 15px;
         position: relative;
 
-        &.centered { 
-            float: none; 
-            margin: 0 auto; 
+        &.centered {
+            float: none;
+            margin: 0 auto;
         }
     }
 }
@@ -109,7 +109,7 @@ that IE7/8 do not support :nth-child.
 -------------------------------------------------- */
 
 
-ul.block-grid { 
+ul.block-grid {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -153,7 +153,7 @@ ul.block-grid {
 /* responsive */
 
 @media screen and (max-width:  @screenSmall) {
-    
+
     .row {
         margin: 0;
         width: auto;
@@ -169,15 +169,60 @@ ul.block-grid {
         padding: 15px 0px;
     }
 
-    .block-grid > li {
-        display: block;
-        float: none;
-        width: 100% !important;
-        margin: 0;
+    .block-grid {
+
+        > li:not([class*='small-']) {
+            display: block;
+            float: none;
+            width: 100% !important;
+            margin: 0;
+        }
+
+        &.small-one-column {
+            > li { width: 100% !important; }
+        }
+
+        &.small-two-columns {
+            > li { width: 50% !important; }
+            > li:nth-child(2n+1) { clear: both; }
+        }
+
+        &.small-three-columns {
+            > li { width: 33.33% !important; }
+            > li:nth-child(3n+1) { clear: both; }
+        }
+
+        &.small-four-columns {
+            > li { width: 25% !important; }
+            > li:nth-child(4n+1) { clear: both; }
+        }
+
+        &.small-five-columns {
+            > li { width: 20% !important; }
+            > li:nth-child(5n+1) { clear: both; }
+        }
+
+        &.small-six-columns {
+            > li { width: 16.66% !important; }
+            > li:nth-child(6n+1) { clear: both; }
+        }
     }
+
+    .small-one, .row .small-one       { width: 8.33333% !important; }
+    .small-two, .row .small-two       { width: 16.66667%  !important; }
+    .small-three, .row .small-three   { width: 25%  !important; }
+    .small-four, .row .small-four     { width: 33.33333%  !important; }
+    .small-five, .row .small-five     { width: 41.66667%  !important; }
+    .small-six, .row .small-six       { width: 50%  !important; }
+    .small-seven, .row .small-seven   { width: 58.33333%  !important; }
+    .small-eight, .row .small-eight   { width: 66.66667%  !important; }
+    .small-nine, .row .small-nine     { width: 75%  !important; }
+    .small-ten, .row .small-ten       { width: 83.33333%  !important; }
+    .small-eleven, .row .small-eleven { width: 91.66667%  !important; }
+    .small-twelve, .row .small-twelve { width: 100%  !important; }
 }
 
 @media screen and (max-width:  @screenSmall) {
-    
+
     .wrap {padding: 0px 10px;}
 }
