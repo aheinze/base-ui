@@ -3,17 +3,13 @@
 /* Standard (large) display targeting */
 .show-for-small,
 .show-for-medium,
-.show-for-medium-down,
 .hide-for-large,
-.hide-for-large-up,
 .show-for-xlarge,
 .show-for-print { display: none !important; }
 
 .hide-for-small,
 .hide-for-medium,
-.hide-for-medium-down,
 .show-for-large,
-.show-for-large-up,
 .hide-for-xlarge,
 .hide-for-print { display: inherit !important; }
 
@@ -21,16 +17,12 @@
 @media only screen and (min-width: @screenXlarge) {
 .hide-for-small,
 .hide-for-medium,
-.hide-for-medium-down,
 .hide-for-large,
-.show-for-large-up,
 .show-for-xlarge { display: inherit !important; }
 
 .show-for-small,
 .show-for-medium,
-.show-for-medium-down,
 .show-for-large,
-.hide-for-large-up,
 .hide-for-xlarge { display: none !important; }
 }
 
@@ -38,16 +30,12 @@
 @media only screen and (max-width: @screenMedium) and (min-width: @screenSmall) {
 .hide-for-small,
 .show-for-medium,
-.show-for-medium-down,
 .hide-for-large,
-.hide-for-large-up,
 .hide-for-xlarge { display: inherit !important; }
 
 .show-for-small,
 .hide-for-medium,
-.hide-for-medium-down,
 .show-for-large,
-.show-for-large-up,
 .show-for-xlarge { display: none !important; }
 }
 
@@ -55,16 +43,12 @@
 @media only screen and (max-width: @screenSmall) {
 .show-for-small,
 .hide-for-medium,
-.show-for-medium-down,
 .hide-for-large,
-.hide-for-large-up,
 .hide-for-xlarge { display: inherit !important; }
 
 .hide-for-small,
 .show-for-medium,
-.hide-for-medium-down,
 .show-for-large,
-.show-for-large-up,
 .show-for-xlarge { display: none !important; }
 }
 
@@ -87,9 +71,3 @@
 .hide-for-portrait,
 .show-for-landscape { display: none !important; }
 }
-
-/* Touch-enabled device targeting */
-.show-for-touch { display: none !important; }
-.hide-for-touch { display: inherit !important; }
-.touch .show-for-touch { display: inherit !important; }
-.touch .hide-for-touch { display: none !important; }
