@@ -171,7 +171,7 @@ ul.block-grid {
 
     .block-grid {
 
-        > li:not([class*='small-']) {
+        &:not([class*='small-']) > li {
             display: block;
             float: none;
             width: 100% !important;
@@ -206,6 +206,10 @@ ul.block-grid {
             > li { width: 16.66% !important; }
             > li:nth-child(6n+1) { clear: both; }
         }
+    }
+
+    .row > [class*='small-'] {
+        float: left !important;
     }
 
     .small-one, .row .small-one       { width: 8.33333% !important; }
