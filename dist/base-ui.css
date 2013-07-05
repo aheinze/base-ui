@@ -1199,6 +1199,7 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
     padding: 0px 10px;
   }
 }
+a.button,
 .button {
   display: inline-block;
   position: relative;
@@ -1215,49 +1216,70 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
   min-width: 42px;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
+a.button.active,
 .button.active,
+a.button:hover,
 .button:hover {
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
+a.button.active,
 .button.active,
+a.button:active,
 .button:active {
   box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
+a.button.green,
 .button.green,
+a.button.success,
 .button.success,
+a.button a.button.green:hover,
 .button a.button.green:hover,
+a.button a.button.success:hover,
 .button a.button.success:hover {
   background-color: #8cc14c;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
+a.button.red,
 .button.red,
+a.button.error,
 .button.error,
+a.button a.button.red:hover,
 .button a.button.red:hover,
+a.button a.button.error:hover,
 .button a.button.error:hover {
   background-color: #da314b;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
+a.button.orange,
 .button.orange,
+a.button.warning,
 .button.warning,
+a.button a.button.orange:hover,
 .button a.button.orange:hover,
+a.button a.button.warning:hover,
 .button a.button.warning:hover {
   background-color: orange;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
+a.button.blue,
 .button.blue,
+a.button.primary,
 .button.primary,
+a.button a.button.blue:hover,
 .button a.button.blue:hover,
+a.button a.button.primary:hover,
 .button a.button.primary:hover {
   background-color: #00a8e6;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
 }
+a.button.dark,
 .button.dark {
   background-color: #666;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -1268,16 +1290,19 @@ a.button,
 a.button:hover {
   vertical-align: middle;
 }
+a.button-mini,
 .button-mini {
   padding: 3px 6px;
   font-size: 11px;
   min-width: 33px;
 }
+a.button-small,
 .button-small {
   padding: 6px 10px;
   font-size: 12px;
   min-width: 36px;
 }
+a.button-large,
 .button-large {
   padding: 15px 15px;
   font-size: 16px;
