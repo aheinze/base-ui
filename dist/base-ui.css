@@ -1220,6 +1220,7 @@ a.button.active,
 .button.active,
 a.button:hover,
 .button:hover {
+  color: #333;
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
@@ -1245,12 +1246,12 @@ a.button a.button.success:hover,
 }
 a.button.red,
 .button.red,
-a.button.error,
-.button.error,
+a.button.danger,
+.button.danger,
 a.button a.button.red:hover,
 .button a.button.red:hover,
-a.button a.button.error:hover,
-.button a.button.error:hover {
+a.button a.button.danger:hover,
+.button a.button.danger:hover {
   background-color: #da314b;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;

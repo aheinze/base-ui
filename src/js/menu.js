@@ -20,4 +20,16 @@
 
     UI.fn.mobilemenu = MobileMenu;
 
+
+    $(document).on("click", "[data-baseui-mobilemenu]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("mobilemenu")) {
+            ele.data("mobilemenu", new MobileMenu(ele, UI.util.parseOptions(ele.attr("data-baseui-mobilemenu"))));
+            $(e.target).trigger("click");
+        }
+
+    });
+
 })(jQuery, jQuery.baseui);

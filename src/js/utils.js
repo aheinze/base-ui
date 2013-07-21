@@ -68,4 +68,15 @@
 
     UI.fn["match-height"] = MatchHeight;
 
+    $(function(){
+        $("[data-baseui-match-height]").each(function(){
+
+            var ele = $(this);
+
+            if(!ele.data("match-height")) {
+                ele.data("match-height", new MatchHeight(ele, UI.util.parseOptions(ele.attr("data-baseui-match-height"))));
+            }
+        });
+    });
+
 })(jQuery, jQuery.baseui);

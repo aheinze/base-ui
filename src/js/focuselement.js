@@ -6,11 +6,11 @@
 
     function signElements(element) {
         
-        $(document).find("[data-baseui='focuselement']").removeClass("baseui-focused").trigger("blur");
+        $(document).find("[data-baseui-focuselement]").removeClass("baseui-focused").trigger("blur");
 
-        element.parents("[data-baseui='focuselement']").addClass("baseui-focused");
+        element.parents("[data-baseui-focuselement]").addClass("baseui-focused");
 
-        if(element.is("[data-baseui='focuselement']")){
+        if(element.is("[data-baseui-focuselement]")){
             element.addClass("baseui-focused").trigger("focus");
         }
     }
@@ -28,5 +28,9 @@
             eventregistred = true;
         }
     };
+
+    $(function(){
+       UI.fn.focuselement();
+    });
 
 })(jQuery, jQuery.baseui);

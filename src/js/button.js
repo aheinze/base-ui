@@ -91,4 +91,27 @@
     UI.fn.button     = Button;
     UI.fn.radiogroup = ButtonRadioGroup;
 
+
+    $(document).on("click", "[data-baseui-button]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("button")) {
+            ele.data("button", new Button(ele, UI.util.parseOptions(ele.attr("data-baseui-button"))));
+            $(e.target).trigger("click");
+        }
+
+    });
+
+    $(document).on("click", "[data-baseui-radiogroup]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("radiogroup")) {
+            ele.data("radiogroup", new ButtonRadioGroup(ele, UI.util.parseOptions(ele.attr("data-baseui-radiogroup"))));
+            $(e.target).trigger("click");
+        }
+
+    });
+
 })(jQuery, jQuery.baseui);

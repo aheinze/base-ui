@@ -33,9 +33,6 @@
         return transitionEnd && { end: transitionEnd };
     })();
 
-    UI.supports.mutationObserver = (function() {
-        return true && win.MutationObserver || win.WebKitMutationObserver;
-    })();
 
     UI.supports.touch  = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
     
@@ -45,28 +42,14 @@
     
     UI.util.clickevent = UI.supports.touch ? 'click':'click';
 
-    UI.util.initByDataAttr = function(context) {
-
-        $(context || doc).find("[data-baseui]:not([data-baseui-skip])").each(function(){
-            
-            var element = $(this), 
-                data    = element.attr("data-baseui"),
-                fn      = $.trim(data.split(">")[0]),
-                options = UI.util.parseOptions(data);
-
-            element.baseui(fn, options);
-
-        }).attr("data-baseui-skip", "true");
-
-    };
 
     UI.util.parseOptions = function(string) {
 
-        var start = string.indexOf(">"), options = {};
+        var options = {};
 
-        if (start != -1) {
+        if (string) {
             try {
-                options = (new Function("", "var json = {" + string.substr(start+1) + "}; return JSON.parse(JSON.stringify(json));"))();
+                options = (new Function("", "var json = {" + string + "}; return JSON.parse(JSON.stringify(json));"))();
             } catch(e) {
                 $.error(e.message);
             }
@@ -116,30 +99,6 @@
         });
 
     };
-
-    // auto data ui on dom manipulation
-    $(function(){
-        
-        UI.util.initByDataAttr(doc);
-
-        var target   = doc.body,
-            MO       = UI.supports.mutationObserver || function(callback) { 
-                        this.observe = function(target, config){
-                            setTimeout(function(){ 
-                                UI.util.initByDataAttr(doc); 
-                            }, 1000);
-                        };
-            },
-            observer = new MO(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes.length) {
-                        UI.util.initByDataAttr(doc);
-                    }
-                });
-            });
-
-        observer.observe(target, { childList: true});
-    });
 
 
 })(jQuery, window, document);

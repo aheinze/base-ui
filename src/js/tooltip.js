@@ -88,4 +88,16 @@
         $tooltip = $('<div class="baseui-tooltip"></div>').appendTo("body");
     });
 
+
+    $(document).on("mouseenter", "[data-baseui-tip]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("tip")) {
+            ele.data("tip", new Tooltip(ele, UI.util.parseOptions(ele.attr("data-baseui-tip"))));
+            $(e.target).trigger("mouseenter");
+        }
+
+    });
+
 })(jQuery, jQuery.baseui);

@@ -33,9 +33,6 @@
         return transitionEnd && { end: transitionEnd };
     })();
 
-    UI.supports.mutationObserver = (function() {
-        return true && win.MutationObserver || win.WebKitMutationObserver;
-    })();
 
     UI.supports.touch  = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
     
@@ -45,28 +42,14 @@
     
     UI.util.clickevent = UI.supports.touch ? 'click':'click';
 
-    UI.util.initByDataAttr = function(context) {
-
-        $(context || doc).find("[data-baseui]:not([data-baseui-skip])").each(function(){
-            
-            var element = $(this), 
-                data    = element.attr("data-baseui"),
-                fn      = $.trim(data.split(">")[0]),
-                options = UI.util.parseOptions(data);
-
-            element.baseui(fn, options);
-
-        }).attr("data-baseui-skip", "true");
-
-    };
 
     UI.util.parseOptions = function(string) {
 
-        var start = string.indexOf(">"), options = {};
+        var options = {};
 
-        if (start != -1) {
+        if (string) {
             try {
-                options = (new Function("", "var json = {" + string.substr(start+1) + "}; return JSON.parse(JSON.stringify(json));"))();
+                options = (new Function("", "var json = {" + string + "}; return JSON.parse(JSON.stringify(json));"))();
             } catch(e) {
                 $.error(e.message);
             }
@@ -116,30 +99,6 @@
         });
 
     };
-
-    // auto data ui on dom manipulation
-    $(function(){
-        
-        UI.util.initByDataAttr(doc);
-
-        var target   = doc.body,
-            MO       = UI.supports.mutationObserver || function(callback) { 
-                        this.observe = function(target, config){
-                            setTimeout(function(){ 
-                                UI.util.initByDataAttr(doc); 
-                            }, 1000);
-                        };
-            },
-            observer = new MO(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes.length) {
-                        UI.util.initByDataAttr(doc);
-                    }
-                });
-            });
-
-        observer.observe(target, { childList: true});
-    });
 
 
 })(jQuery, window, document);
@@ -1782,25 +1741,60 @@ else {
     UI.fn.button     = Button;
     UI.fn.radiogroup = ButtonRadioGroup;
 
+
+    $(document).on("click", "[data-baseui-button]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("button")) {
+            ele.data("button", new Button(ele, UI.util.parseOptions(ele.attr("data-baseui-button"))));
+            $(e.target).trigger("click");
+        }
+
+    });
+
+    $(document).on("click", "[data-baseui-radiogroup]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("radiogroup")) {
+            ele.data("radiogroup", new ButtonRadioGroup(ele, UI.util.parseOptions(ele.attr("data-baseui-radiogroup"))));
+            $(e.target).trigger("click");
+        }
+
+    });
+
 })(jQuery, jQuery.baseui);
 
 (function($, UI){
 
 
     var active   = false,
+        init     = false,
         Dropdown = function(element, options) {
         
-        var $this = this;
+            var $this = this;
 
-        this.options = $.extend({}, this.options, options);
-        this.element = $(element).on(UI.util.clickevent, ".dp-toggle", function(e){
-            $this.toggle();
-        });
-
-        if (this.element.is(".dp-toggle")) {
-            this.element.on("click", function(e){
+            this.options = $.extend({}, this.options, options);
+            this.element = $(element).on(UI.util.clickevent, ".dp-toggle", function(e){
                 $this.toggle();
             });
+
+            if (this.element.is(".dp-toggle")) {
+                this.element.on("click", function(e){
+                    $this.toggle();
+                });
+            }
+
+        if(!init) {
+            $(document).on(UI.util.clickevent, function() {
+
+                $(".active[data-baseui-dropdown]").not(active).removeClass("active");
+                active = false;
+                
+            });
+
+            init = true;
         }
     };
 
@@ -1817,12 +1811,22 @@ else {
 
     });
 
-    $(document).on(UI.util.clickevent, function() {
-        $(".active[data-baseui^='dropdown']").not(active).removeClass("active");
-        active = false;
-    });
 
     UI.fn.dropdown = Dropdown;
+
+
+    $(document).on("click", "[data-baseui-dropdown]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("dropdown")) {
+            ele.data("dropdown", new Dropdown(ele, UI.util.parseOptions(ele.attr("data-baseui-dropdown"))));
+            active = ele;
+            $(e.target).trigger("click");
+
+        }
+
+    });
 
 })(jQuery, jQuery.baseui);
 
@@ -1834,11 +1838,11 @@ else {
 
     function signElements(element) {
         
-        $(document).find("[data-baseui='focuselement']").removeClass("baseui-focused").trigger("blur");
+        $(document).find("[data-baseui-focuselement]").removeClass("baseui-focused").trigger("blur");
 
-        element.parents("[data-baseui='focuselement']").addClass("baseui-focused");
+        element.parents("[data-baseui-focuselement]").addClass("baseui-focused");
 
-        if(element.is("[data-baseui='focuselement']")){
+        if(element.is("[data-baseui-focuselement]")){
             element.addClass("baseui-focused").trigger("focus");
         }
     }
@@ -1856,6 +1860,10 @@ else {
             eventregistred = true;
         }
     };
+
+    $(function(){
+       UI.fn.focuselement();
+    });
 
 })(jQuery, jQuery.baseui);
 
@@ -1975,6 +1983,18 @@ else {
     });
 
     UI.fn.mobilemenu = MobileMenu;
+
+
+    $(document).on("click", "[data-baseui-mobilemenu]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("mobilemenu")) {
+            ele.data("mobilemenu", new MobileMenu(ele, UI.util.parseOptions(ele.attr("data-baseui-mobilemenu"))));
+            $(e.target).trigger("click");
+        }
+
+    });
 
 })(jQuery, jQuery.baseui);
 
@@ -2242,6 +2262,18 @@ else {
 
     $(function(){
         $tooltip = $('<div class="baseui-tooltip"></div>').appendTo("body");
+    });
+
+
+    $(document).on("mouseenter", "[data-baseui-tip]", function(e){
+
+        var ele = $(this);
+
+        if(!ele.data("tip")) {
+            ele.data("tip", new Tooltip(ele, UI.util.parseOptions(ele.attr("data-baseui-tip"))));
+            $(e.target).trigger("mouseenter");
+        }
+
     });
 
 })(jQuery, jQuery.baseui);
@@ -2672,5 +2704,16 @@ else {
     });
 
     UI.fn["match-height"] = MatchHeight;
+
+    $(function(){
+        $("[data-baseui-match-height]").each(function(){
+
+            var ele = $(this);
+
+            if(!ele.data("match-height")) {
+                ele.data("match-height", new MatchHeight(ele, UI.util.parseOptions(ele.attr("data-baseui-match-height"))));
+            }
+        });
+    });
 
 })(jQuery, jQuery.baseui);
