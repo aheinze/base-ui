@@ -1193,8 +1193,6 @@ ul.block-grid.six-columns > li:nth-child(6n+1) {
   .row .small-twelve {
     width: 100%  !important;
   }
-}
-@media screen and (max-width: 768px) {
   .wrap {
     padding: 0px 10px;
   }

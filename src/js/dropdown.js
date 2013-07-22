@@ -47,15 +47,12 @@
     UI.fn.dropdown = Dropdown;
 
 
-    $(document).on("click", "[data-baseui-dropdown]", function(e){
+    $(document).on("mouseenter", "[data-baseui-dropdown]", function(e){
 
         var ele = $(this);
 
         if(!ele.data("dropdown")) {
             ele.data("dropdown", new Dropdown(ele, UI.util.parseOptions(ele.attr("data-baseui-dropdown"))));
-            active = ele;
-            $(e.target).trigger("click");
-
         }
 
     });
